@@ -22,4 +22,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /**Backend Routes**/
-Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);
+/*Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);*/
+
+Route::get('/backend/users', App\Http\Livewire\IndexUser::class)->name('users.index');
+Route::get('/backend/users/create', App\Http\Livewire\CreateUser::class)->name('users.create');
+

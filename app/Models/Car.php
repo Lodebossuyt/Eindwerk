@@ -26,4 +26,7 @@ class Car extends Model
     public function transmission(){
         return $this->belongsTo(Transmission::class);
     }
+    public function photos(){
+        return $this->morphToMany(Photo::class, 'photoable');
+    }
 }
