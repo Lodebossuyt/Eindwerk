@@ -160,7 +160,7 @@
                         x-show="show">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>Message!</strong> <p x-text="message"></p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <button @click="show = false;" type="button" class="btn-close"></button>
                         </div>
                     </div>
                 </div>

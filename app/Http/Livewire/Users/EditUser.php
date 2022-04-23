@@ -83,7 +83,7 @@ class EditUser extends Component
 
         }
 
-        $this->dispatchBrowserEvent('notify', 'User updated Successfully!');
+        $this->dispatchBrowserEvent('notify', 'User: ' . $user->name . ' updated Successfully!' );
 
         /* return redirect()->route('users.index');*/
     }
