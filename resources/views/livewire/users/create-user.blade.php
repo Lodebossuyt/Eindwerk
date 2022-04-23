@@ -1,33 +1,45 @@
 <div>
-    <form action="" method="POST" enctype="multipart/form-data">
-        @csrf
-       @if(session('success_message'))
-           <div class="alert">User Created</div>
-        @endif
-        <div class="form-group py-2">
-            <label for="user-name">Fullname:</label>
-            <input type="text" class="form-control" id="user-name" placeholder="Enter Your Full Name" name="name">
+    <h1>User Create</h1>
+    <form wire:submit.prevent="create_user">
+        <div class="mb-3">
+            <label class="form-label" for="name">Name:</label>
+            <input wire:model="name" class="form-control" type="text" id="name">
+            @error('name') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
         </div>
-        <div class="form-group py-2">
-            <label for="user-email">Email:</label>
-            <input type="email" class="form-control" id="user-email" placeholder="Email" name="email">
+        <div class="mb-3">
+            <label class="form-label" for="email">Email:</label>
+            <input wire:model="email" class="form-control" type="text" id="email">
+            @error('email') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
         </div>
-        <div class="form-group py-2">
-            <label for="roles">Roles: (CTRL + click for multiple selects)</label>
-            <select class="form-control" name="roles[]" id="roles" multiple>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password:</label>
+            <input wire:model.lazy="password" class="form-control" type="password" id="password">
+            @error('password') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="passwordConfirmation">ConfirmPassword:</label>
+            <input wire:model="passwordConfirmation" class="form-control" type="password" id="passwordConfirmation">
+            @error('passwordConfirmation') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="roles">Roles: (CTRL + click for multiple selects)</label>
+            <select wire:model="rolesSelect" class="form-control" id="roles" multiple>
                 @foreach($roles as $role)
-                    <option value="{{$role->id}}">{{$role->name}}</option>
+                    <option  value="{{$role->id}}">{{$role->name}}</option>
                 @endforeach
             </select>
+            @error('rolesSelect') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
         </div>
-        <div class="form-group py-2">
-            <label for="passwordfield">Password:</label>
-            <input type="password" class="form-control" id="passwordfield" name="password">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload</label>
+            <input type="file" wire:model="avatar" class="form-control" id="inputGroupFile01">
         </div>
-        <div class="form-group py-2">
-            <label for="file">Upload photo:</label>
-            <input type="file" class="form-control" id="file" name="file">
+        @if ($avatar)
+            Photo Preview: <br>
+            <img class="img-thumbnail mb-3" src="{{ $avatar->temporaryUrl() }}">
+        @endif
+        <div>
+            <input class="btn btn-success mb-3" type="submit" value="Create User">
         </div>
-        <button type="submit" class="btn btn-success my-2">Add User</button>
     </form>
 </div>

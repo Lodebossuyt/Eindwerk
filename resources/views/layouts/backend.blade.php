@@ -153,6 +153,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="position-fixed mt-5 top-0 end-0 p-3" style="z-index: 11">
+                    <div
+                        x-data="{show: false, message: ''}"
+                        x-on:notify.window="show = true; message = $event.detail; setTimeout(() => { show = false}, 4000)"
+                        x-show="show">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Message!</strong> <p x-text="message"></p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+
                 @yield('content')
             </div>
         </main>

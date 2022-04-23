@@ -26,4 +26,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/backend/users', App\Http\Livewire\IndexUser::class)->name('users.index');
 Route::get('/backend/users/create', App\Http\Livewire\CreateUser::class)->name('users.create');
-
