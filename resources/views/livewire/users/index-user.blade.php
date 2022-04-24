@@ -18,7 +18,7 @@
         <tbody>
         @if($users)
             @foreach($users as $user)
-                <tr>
+                <tr wire:key="{{$loop->index}}">
                     <th>{{$user->id}}</th>
                     <th>
                         @if($user->photos->isnotempty())
@@ -45,6 +45,7 @@
                         <button class="btn btn-warning" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal{{$user->id}}">Edit user
                         </button>
+                        <button type="button" wire:click="deleteUser({{$user->id}})" class="btn btn-danger">Delete User</button>
                     </th>
                 </tr>
 
@@ -58,7 +59,7 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                @livewire('users.edit-user', ['user'=>$user])
+                                @livewire('users.edit-user', ['user'=>$user], key($user->id))
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

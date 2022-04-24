@@ -17,8 +17,8 @@ class EditUser extends Component
     public $user_id;
     public $name = '';
     public $email = '';
-    public $password = '';
-    public $passwordConfirmation = '';
+    //public $password = '';
+    //public $passwordConfirmation = '';
     public $rolesSelect = [];
     public $oldphoto;
     public $avatar;
@@ -31,8 +31,8 @@ class EditUser extends Component
         $this->user_id = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
-        $this->password = $user->password;
-        $this->passwordConfirmation = $user->password;
+        //$this->password = $user->password;
+        //$this->passwordConfirmation = $user->password;
         foreach($user->roles as $role){
             array_push($this->rolesSelect, $role->id);
         }
@@ -47,8 +47,8 @@ class EditUser extends Component
         $data = $this->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:6',
-            'passwordConfirmation' => 'required|same:password',
+            //'password' => 'required|min:6',
+            //'passwordConfirmation' => 'required|same:password',
             'rolesSelect' => 'required',
             'avatar'=>'image|max:5000',
         ]);
@@ -56,7 +56,7 @@ class EditUser extends Component
         $user->save([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            //'password' => Hash::make($data['password']),
         ]);
 
         $user->roles()->sync($data['rolesSelect'], true);
@@ -86,6 +86,7 @@ class EditUser extends Component
         $this->dispatchBrowserEvent('notify', 'User: ' . $user->name . ' updated Successfully!' );
 
         /* return redirect()->route('users.index');*/
+        $this->emit('refreshUsers');
     }
 
     public function render()

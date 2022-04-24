@@ -11,16 +11,6 @@
             @error('email') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
         </div>
         <div class="mb-3">
-            <label class="form-label" for="password">Password:</label>
-            <input wire:model.lazy="password" class="form-control" type="password" id="password">
-            @error('password') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="passwordConfirmation">ConfirmPassword:</label>
-            <input wire:model="passwordConfirmation" class="form-control" type="password" id="passwordConfirmation">
-            @error('passwordConfirmation') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror
-        </div>
-        <div class="mb-3">
             <label class="form-label" for="roles">Roles: (CTRL + click for multiple selects)</label>
             <select wire:model="rolesSelect" class="form-control" id="roles" multiple>
                 @foreach($roles as $role)
