@@ -25,8 +25,8 @@ return new class extends Migration
             $table->unsignedBigInteger('color_id')->nullable();
             $table->timestamps();
             $table->unique(['car_id','color_id']);
-            $table->foreign('car_id')->references('id')->on('cars');
-            $table->foreign('color_id')->references('id')->on('colors');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
         });
     }
 

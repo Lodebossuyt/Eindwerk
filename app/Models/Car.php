@@ -29,4 +29,7 @@ class Car extends Model
     public function photos(){
         return $this->morphToMany(Photo::class, 'photoable');
     }
+    public function fueltype(){
+        return $this->belongsTo(Fueltype::class);
+    }
 }

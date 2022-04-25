@@ -34,6 +34,7 @@
             <th>brand</th>
             <th>drivetrain</th>
             <th>transmission</th>
+            <th>fueltype</th>
             <th>buildyear</th>
             <th>body</th>
             <th>price</th>
@@ -64,6 +65,7 @@
                     <th>{{$car->brand->name}}</th>
                     <th>{{$car->drivetrain->name}}</th>
                     <th>{{$car->transmission->name}}</th>
+                    <th>{{$car->fueltype->name}}</th>
                     <th>{{$car->buildyear}}</th>
                     <th>{{$car->body}}</th>
                     <th>&euro; {{$car->price}}</th>
