@@ -21,8 +21,8 @@ return new class extends Migration
 
         Schema::create('car_color', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('car_id');
-            $table->unsignedBigInteger('color_id');
+            $table->unsignedBigInteger('car_id')->nullable();
+            $table->unsignedBigInteger('color_id')->nullable();
             $table->timestamps();
             $table->unique(['car_id','color_id']);
             $table->foreign('car_id')->references('id')->on('cars');

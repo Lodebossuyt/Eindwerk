@@ -43,9 +43,9 @@
                     <th>{{$user->updated_at}}</th>
                     <th>
                         <button class="btn btn-warning" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal{{$user->id}}">Edit user
+                                data-bs-target="#exampleModal{{$user->id}}"><i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button type="button" wire:click="deleteUser({{$user->id}})" class="btn btn-danger">Delete User</button>
+                        <button type="button" wire:click="deleteUser({{$user->id}})" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </th>
                 </tr>
 
@@ -76,6 +76,9 @@
             </tr>
         @endif
         </tbody>
-
     </table>
+    <div>
+        {{ $users->links() }}
+    </div>
+
 </div>

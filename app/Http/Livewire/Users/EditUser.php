@@ -47,16 +47,14 @@ class EditUser extends Component
         $data = $this->validate([
             'name' => 'required',
             'email' => 'required|email',
-            //'password' => 'required|min:6',
-            //'passwordConfirmation' => 'required|same:password',
             'rolesSelect' => 'required',
-            'avatar'=>'image|max:5000',
         ]);
+
         $user = User::findOrfail($this->user_id);
-        $user->save([
+
+        $user->update([
             'name' => $data['name'],
             'email' => $data['email'],
-            //'password' => Hash::make($data['password']),
         ]);
 
         $user->roles()->sync($data['rolesSelect'], true);
@@ -79,13 +77,10 @@ class EditUser extends Component
                 $photo = Photo::create(['file'=>$name]);
                 $user->photos()->save($photo);
             }
-
-
         }
 
         $this->dispatchBrowserEvent('notify', 'User: ' . $user->name . ' updated Successfully!' );
 
-        /* return redirect()->route('users.index');*/
         $this->emit('refreshUsers');
     }
 

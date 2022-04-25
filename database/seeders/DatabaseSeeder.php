@@ -20,6 +20,13 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             UsersRolesTableSeeder::class,
             UserdetailsTableSeeder::class,
+            FueltypesTableSeeder::class,
+            DrivetrainTableSeeder::class,
+            TransmissionTableSeeder::class,
+            BrandsTableSeeder::class,
+            CarsTableSeeder::class,
+            ColorsTableSeeder::class,
+            CarsColorsTableSeeder::class,
         ]);
     }
 }

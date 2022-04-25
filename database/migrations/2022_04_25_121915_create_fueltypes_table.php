@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('fueltypes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('brand_id')->index();
-            $table->unsignedBigInteger('drivetrain_id')->index();
-            $table->unsignedBigInteger('transmission_id')->index();
-            $table->unsignedBigInteger('fueltype_id')->index();
-            $table->string('buildyear')->nullable();
-            $table->text('body');
-            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('fueltypes');
     }
 };

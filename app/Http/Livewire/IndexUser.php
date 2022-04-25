@@ -4,10 +4,15 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class IndexUser extends Component
 {
-    public $users;
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
+    protected $users;
 
     protected $listeners = ['refreshUsers' => '$refresh'];
 
@@ -15,11 +20,12 @@ class IndexUser extends Component
         $user = User::findOrFail($id);
         $this->dispatchBrowserEvent('notify', 'User:' . $user->name . 'deleted Successfully!' );
         $user->delete();
-        $this->users = User::all();
+        $this->users = User::paginate(10);
+        //$this->resetPage();
     }
     public function render()
     {
-        $this->users = User::all();
+        $this->users = User::paginate(10);
         return view('livewire.users.index-user', ['users'=>$this->users])->extends('layouts.backend')->section('content');
     }
 }
