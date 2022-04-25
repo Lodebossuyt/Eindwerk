@@ -7,6 +7,7 @@ use App\Models\Car;
 use App\Models\Color;
 use App\Models\Drivetrain;
 use App\Models\Fueltype;
+use App\Models\Photo;
 use App\Models\Transmission;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -29,7 +30,7 @@ class Create extends Component
     public $buildyear;
     public $body;
     public $price;
-    public $avatar;
+    public $photos;
     public $carColors = [];
 
 
@@ -59,6 +60,18 @@ class Create extends Component
         $car->save();
 
         $car->colors()->sync($data['carColors'], false);
+
+        if($this->photos){
+            foreach ($this->photos as $photo) {
+                $name = time() . $photo->getClientOriginalName();
+                $photo->storeAs('images', $name);
+                $photodatabase = Photo::create(['file'=>$name]);
+                $car->photos()->save($photodatabase);
+            }
+        }
+
+
+
         $this->dispatchBrowserEvent('notify', 'Car created Successfully!');
 
         $this->name = '';
@@ -70,6 +83,7 @@ class Create extends Component
         $this->body = '';
         $this->price = '';
         $this->avatar = '';
+        $this->photos = '';
         $this->carColors = [];
     }
 

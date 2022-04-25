@@ -66,12 +66,14 @@
             <div>@error('carColors') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
         </div>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupFile01">Upload</label>
-            <input type="file" wire:model="avatar" class="form-control" id="inputGroupFile01">
+            <label class="input-group-text" for="inputGroupFile01">Upload multiple photos:</label>
+            <input type="file" wire:model="photos" class="form-control" id="inputGroupFile01" multiple>
         </div>
-        @if ($avatar)
-            Photo Preview: <br>
-            <img class="img-thumbnail mb-3" src="{{ $avatar->temporaryUrl() }}">
+        @if ($photos)
+            Photo Previews: <br>
+        @foreach($photos as $photo)
+            <img class="img-thumbnail mb-3" src="{{ $photo->temporaryUrl() }}">
+            @endforeach
         @endif
         <div>
             <input class="btn btn-success mb-3" type="submit" value="Create Car" data-bs-dismiss="modal">
