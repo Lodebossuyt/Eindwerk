@@ -16,7 +16,7 @@ class Index extends Component
 
     protected $colors;
 
-    public function deleteBrand($id){
+    public function delete_color($id){
         $color = Color::findOrfail($id);
        /* foreach($color->cars as $car){
             $car->brand_id = NULL;

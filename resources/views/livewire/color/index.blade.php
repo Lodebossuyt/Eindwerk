@@ -26,7 +26,7 @@
                 <td>{{$color->created_at}}</td>
                 <td>{{$color->updated_at}}</td>
                 <td>
-                    <button type="button" wire:click="deletecolor({{$color->id}})" class="btn btn-danger m-1"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" wire:click="delete_color({{$color->id}})" class="btn btn-danger m-1"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
             </tr>
         @endforeach

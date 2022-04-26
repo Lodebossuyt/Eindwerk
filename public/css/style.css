@@ -1,0 +1,344 @@
+body{
+    background-color: rgba(31,27,45,1);
+}
+/*algemeen*/
+.bg-licht{
+    background-color: rgba(255,255,255,.04)!important;
+}
+.bg-dark{
+    background-color: rgba(0,0,0,0.20)!important;
+}
+.bg-select{
+    background-color: rgba(31,27,45,1);
+}
+.border-bottom-lb{
+    border-bottom: 1px solid rgba(255,255,255,.15)!important;
+}
+.bg-duister{
+    background-color: rgba(31,27,45,1)!important;
+}
+.rounded-lb{
+    border-radius: 0.75rem!important;
+}
+.rounded-lb2{
+    border-radius: 1rem!important;
+}
+.rounded-lb-left2{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.rounded-lb-top{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.hover-text-white-50:hover{
+    color: white!important;
+    transition: 0.3s;
+}
+.fs-7{
+    font-size: 80%;
+}
+::placeholder{
+    font-family: NotoRe;
+    color:rgba(255,255,255,.5)!important;
+}
+/*Begin hover effects*/
+.card{
+    position: relative!important;
+}
+.img-hover{
+    opacity:1!important;
+    transition: 0.3s ease-in-out;
+}
+.showheart{
+    opacity: 0!important;
+    transition: 0.3s ease-in-out;
+}
+.showbadges{
+    position: absolute;
+}
+.card-hover{
+    border: 1px solid transparent!important;
+    transition: 0.3s ease-in-out;
+}
+.card-hover:hover{
+    border:1px solid rgba(255,255,255,.15)!important;
+    transition: 0.3s ease-in-out;
+}
+.card-hover:hover .img-hover{
+    opacity: 0.60!important;
+    transition: 0.3s ease-in-out;
+}
+.card-hover:hover .showheart{
+    opacity: 1!important;
+    transition: 0.3s ease-in-out;
+}
+.w-33{
+    width: 33%!important;
+}
+/*Einde hover effects*/
+
+/*webfonts*/
+@font-face {
+    font-family: NotoBo;
+    src: url('../webfonts/NotoSans-Bold.ttf');
+}
+@font-face {
+    font-family: NotoBoIt;
+    src: url('../webfonts/NotoSans-Bolditalic.ttf');
+}
+@font-face {
+    font-family: NotoIt;
+    src: url('../webfonts/NotoSans-italic.ttf');
+}
+@font-face {
+    font-family: NotoRe;
+    src: url('../webfonts/NotoSans-Regular.ttf');
+}
+
+.NotoBo{
+    font-family: NotoBo;
+}
+.NotoBoIt{
+    font-family: NotoBoIt;
+}
+.NotoIt{
+    font-family: NotoIt;
+}
+.NotoRe{
+    font-family: NotoRe;
+}
+.dropdown-menu{
+    background-color: #1f1b2d;
+    border-color: rgba(255,255,255,.15);
+    border-radius: 0.5rem;
+    margin-top: 0.625rem!important;
+}
+
+/*Navbar*/
+nav a:hover{
+    color:white!important;
+    transition: 0.3s;
+}
+nav img{
+    padding-bottom: 2px;
+}
+#login:hover{
+    color:white!important;
+    transition: 0.3s;
+}
+.backgroundnavbar{
+    background-color: #1f1b2d!important;
+    transition: ease-in-out 0.2s;
+}
+/*background*/
+#bg-top{
+    background-image: url("../images/hero-bg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+/*formulier*/
+#formwrapper{
+    border:1px solid rgba(255,255,255,.15);
+    border-radius: 0.5rem;
+    background-color: rgba(255,255,255,0.05);
+}
+#formwrapper a:hover{
+    color: white!important;
+    transition: 0.3s;
+}
+#formwrapper ul li a:hover{
+    color:white!important;
+    background-color: transparent!important;
+    transition: 0.3s;
+}
+#formwrapper .dropdown{
+    border-right: 1px solid rgba(255,255,255,.15);
+}
+#formwrapper input{
+    border-right: 1px solid rgba(255,255,255,.15)!important;
+}
+.hr-light{
+    color:rgba(255,255,255,.15)!important;
+}
+#formwrapper hr{
+    opacity: 1!important;
+}
+@media (max-width: 576px) {
+    #formwrapper select{
+    border-right: 0px solid rgba(255,255,255,.15);
+    }
+}
+@media (max-width: 768px){
+    #formwrapper input{
+        border-right: 0px solid rgba(255,255,255,.15)!important;
+    }
+}
+/*sign in modal*/
+.modal-content{
+    border-radius: 0.75rem!important;
+    background: rgba(31, 27, 45, 1)!important;
+    border: 1px solid rgba(255,255,255,.15)!important;
+}
+@media (max-width: 576px) {
+    .border-modal-rechts{
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+}
+@media (min-width: 768px){
+    .border-modal-rechts{
+        border-right: 1px solid rgba(255,255,255,.15);
+    }
+}
+
+.hr-light2{
+    color:rgba(255,255,255,.60)!important;
+}
+.signinform input{
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.50rem;
+}
+
+/*formulier met select*/
+select{
+    background: transparent!important;
+    border: 0;
+    border-right: 1px solid rgba(255,255,255,.15);
+}
+option{
+    background: transparent!important;
+    color:black;
+}
+
+/*cardbodys*/
+.hoverbody:hover{
+    color: white !important;
+    background-color: rgba(255,255,255,0.05)!important;
+    border-radius: 0.5rem!important;
+    transition: 0.3s;
+
+}
+/*Top offers*/
+.img-cover{
+    object-fit: cover;
+    height: 100%;
+}
+
+/*Logo's*/
+.opacity-hover:hover{
+    opacity: 1!important;
+    transition: 0.3s;
+}
+/*carousel*/
+.carousel-control-prev{
+    position: absolute;
+    left: -10%;
+}
+.carousel-control-next{
+    position: absolute;
+    right: -10%;
+}
+.carousel{
+    position: relative;
+}
+.carousel-indicators{
+    position:absolute;
+    bottom: -15%;
+}
+
+/*footer*/
+footer hr{
+    color: white;
+}
+.formfooter{
+    border:1px solid rgba(255,255,255,.15);
+    border-radius: 0.5rem;
+}
+.circle-background{
+    height: 35px;
+    width: 35px;
+}
+#socialbuttons .circle-background:hover{
+    background-color:white!important;
+    color: red!important;
+    transition: 0.3s;
+}
+.hoverfooter p:hover{
+    color:white!important;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*webshop*/
+/*catalogus*/
+#catalogus ul{
+    border-bottom:1px solid rgba(255,255,255,.15)!important;
+}
+#catalogusSelection{
+    border-bottom:1px solid rgba(255,255,255,.15)!important;
+}
+#catalogusLocation select{
+    border:1px solid rgba(255,255,255,.15)!important;
+}
+#catalogusYear select{
+    border:1px solid rgba(255,255,255,.15)!important;
+}
+#catalogusBodyType input{
+    border-color: rgba(255, 255, 255, 0.5);
+}
+#checkboxBodys{
+    height:140px;
+    overflow-y: scroll;
+}
+#checkboxColor{
+    height:140px;
+    overflow-y: scroll;
+}
+.border-lb{
+    border:1px solid rgba(255,255,255,.15)!important;
+}
+.border-lb-right{
+    border-right:1px solid rgba(255,255,255,.20)!important;
+}
+
+/*begin offcanvas filter*/
+.scroll{
+    overflow-y: scroll;
+}
+.offcanvas-start{
+    max-width: 21rem!important;
+}
+/*einde offcanvas filter*/
+
+/*begin detaillpagina*/
+.social-hover:hover{
+    background-color: white!important;
+    color: red!important;
+    transition: 0.3s;
+}
+/*einde detaillpagina*/
+/**begin contacts**/
+iframe{
+    overflow: hidden;
+    width: 100%;
+    height: 512px;
+}
+/**einde contacts**/
+/**Begin detaillpagina**/
+.accordion-button{
+    color: black;
+}
+/**Einde detaillpagina**/
+/**Begin checkout**/
+#checkoutPayment img{
+    width: 50px;
+    height: 100%;
+}
+/**Eindecheckout**/
+
+/*accordeon*/
+.accordion-button::after{
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='grey'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+}
