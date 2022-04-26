@@ -28,10 +28,10 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav mb-2 mb-lg-0">
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link active NotoBo" aria-current="page" href="index.html">Home</a>
+                                    <a class="nav-link active NotoBo" aria-current="page" href="{{route('home')}}">Home</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link NotoBo" href="webshop.html">Webshop</a>
+                                    <a class="nav-link NotoBo" href="{{route('webshop')}}">Webshop</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link NotoBo" href="contacts.html">Contact</a>

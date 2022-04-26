@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/**Home Route**/
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/**Frontend Routes**/
+Route::get('/webshop', App\Http\Livewire\Frontend\Webshop::class)->name('webshop');
 
 /**Backend Routes**/
 /*Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);*/
