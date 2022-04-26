@@ -22,6 +22,50 @@
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary ms-2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1">Brands
+        </button>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Brands</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        @livewire('brand.create')
+                        @livewire('brand.index')
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" wire:click="close" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary ms-2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal2">Colors
+        </button>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Color</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        @livewire('color.create')
+                        @livewire('color.index')
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" wire:click="close" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -62,7 +106,9 @@
 
                     </th>
                     <th>{{$car->name}}</th>
-                    <th>{{$car->brand->name}}</th>
+                    <th>
+                        {{$car->brand ? $car->brand->name : "No brand attached!"}}
+                    </th>
                     <th>{{$car->drivetrain->name}}</th>
                     <th>{{$car->transmission->name}}</th>
                     <th>{{$car->fueltype->name}}</th>
@@ -94,7 +140,7 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                EDIT FORM HIER
+                                @livewire('cars.edit',['car'=>$car], key($car->id))
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,7 +152,7 @@
         @else
             <tr>
                 <th colspan="8">
-                    Geen Users gevonden!
+                    Geen Cars gevonden!
                 </th>
             </tr>
         @endif

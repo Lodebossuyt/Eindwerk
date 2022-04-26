@@ -25,6 +25,10 @@ class Index extends Component
         $this->cars = Car::paginate(5);
     }
 
+    public function close(){
+        $this->emit('refreshCars');
+    }
+
     public function render()
     {
 
