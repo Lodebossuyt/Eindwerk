@@ -10,13 +10,11 @@ class Webshop extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
-
     protected $cars;
 
     public function render()
     {
-        $this->cars = Car::all();
+        $this->cars = Car::paginate(6);
         return view('livewire.frontend.webshop', ['cars'=>$this->cars])->extends('layouts.frontend')->section('content');
     }
 }

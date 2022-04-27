@@ -475,9 +475,9 @@
                                         <option>Price: Low - High</option>
                                         <option>Price: High - Low</option>
                                     </select>
-                                    <div class="border-lb-right py-3 px-2 me-2"></div>
+<!--                                    <div class="border-lb-right py-3 px-2 me-2"></div>
                                     <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
-                                            class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>
+                                            class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>-->
                                 </div>
                             </div>
                             <div id="catalogusCarCards" class="row">
@@ -806,8 +806,8 @@
                                 </div>
                             </div>
                             <div class="row pt-4 pe-3 pb-4">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <p class="text-white NotoRe pe-3 m-0"><i class="bi bi-arrow-down-up pe-2"></i> Sort
+                                <div class="d-flex flex-wrap justify-content-center align-items-center">
+<!--                                    <p class="text-white NotoRe pe-3 m-0"><i class="bi bi-arrow-down-up pe-2"></i> Sort
                                         by:</p>
                                     <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
                                         <option>Newest</option>
@@ -819,8 +819,9 @@
                                     <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
                                             class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>
                                     <p class="text-white NotoRe m-0 ms-auto d-md-none"><i class="bi bi-caret-left"></i>1/5<i
-                                            class="bi bi-caret-right"></i></p>
-                                    <nav aria-label="Page navigation example"
+                                            class="bi bi-caret-right"></i></p>-->
+                                {{ $cars->links('layouts.custom-pagination') }}
+<!--                                    <nav aria-label="Page navigation example"
                                          class="d-none d-md-inline-flex ms-md-auto">
                                         <ul class="pagination justify-content-end m-0">
                                             <li class="page-item disabled">
@@ -839,7 +840,7 @@
                                                 <a class="page-link border-lb bg-licht text-white" href="#">Next</a>
                                             </li>
                                         </ul>
-                                    </nav>
+                                    </nav>-->
                                 </div>
                             </div>
                         </div>
