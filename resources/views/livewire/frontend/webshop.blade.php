@@ -17,7 +17,7 @@
                                 <div class="col-md-6 border-modal-rechts p-5">
                                     <header><h2 class="text-white fs-3 mb-4 mb-sm-5">Hey there! <br> Welcome back.</h2>
                                     </header>
-                                    <img src="images/signin-dark.svg" class="img-fluid" alt="sign in pic">
+                                    <img src="{{asset('images2/signin-dark.svg')}}" class="img-fluid" alt="sign in pic">
                                     <div class="d-flex flex-wrap mt-4 mt-sm-5">
                                         <p class="text-white-50 pe-2">Don't have an account?</p>
                                         <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
@@ -80,7 +80,7 @@
                                         manage your wishlist</p>
                                     <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Leave
                                         reviews</p>
-                                    <img src="images/signup-dark.svg" class="img-fluid" alt="sign in pic">
+                                    <img src="{{asset('images2/signup-dark.svg')}}" class="img-fluid" alt="sign in pic">
                                     <div class="d-flex flex-wrap mt-4 mt-sm-5">
                                         <p class="text-white-50 pe-2">Already have an account?</p>
                                         <a class="text-white" data-bs-target="#exampleModalToggle"
@@ -486,7 +486,7 @@
 
                                         <div>
                                             <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="{{$car->photos->isnotempty() ? $car->photos->first()->file : "http://via.placeholder.com/400x200"}}"
+                                                <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
                                                                                                     class="card-img-top rounded-lb-top"
                                                                                                     alt="mercedes"></a>
                                                 <div
@@ -514,7 +514,7 @@
                                                             </label>
                                                         </div>-->
                                                     </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
+                                                    <a href="{{route('detailpage', $car->slug)}}" class="text-decoration-none"><h3
                                                             class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
                                                             {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3></a>
                                                     <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>

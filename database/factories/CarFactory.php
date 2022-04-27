@@ -7,6 +7,7 @@ use App\Models\Drivetrain;
 use App\Models\Fueltype;
 use App\Models\Transmission;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
@@ -29,8 +30,15 @@ class CarFactory extends Factory
         $transmissions = Transmission::all()->count();
         $fueltypes = Fueltype::all()->count();
 
+        /*$name = $fakervehicle->vehicle();
+        $slug = Str::slug($name, '-');*/
+
+        $name = $this->faker->unique()->sentence($nbwords = 2, $variableNbWords=true);
+        $slug = Str::slug($name, '-');
+
         return [
-            'name' => $fakervehicle->vehicle(),
+            'name' => $name,
+            'slug'=> $slug,
             'brand_id' => $this->faker->numberBetween($min = 1, $max = $brands),
             'drivetrain_id' => $this->faker->numberBetween($min = 1, $max = $drivetrains),
             'transmission_id' => $this->faker->numberBetween($min = 1, $max = $transmissions),

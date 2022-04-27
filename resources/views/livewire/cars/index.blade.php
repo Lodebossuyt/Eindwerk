@@ -23,9 +23,9 @@
             </div>
         </div>
         <button class="btn btn-primary ms-2" data-bs-toggle="modal"
-                data-bs-target="#exampleModal1">Brands
+                data-bs-target="#exampleModalBrand">Brands
         </button>
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModalBrand" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -45,9 +45,9 @@
             </div>
         </div>
         <button class="btn btn-primary ms-2" data-bs-toggle="modal"
-                data-bs-target="#exampleModal2">Colors
+                data-bs-target="#exampleModalColors">Colors
         </button>
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModalColors" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
