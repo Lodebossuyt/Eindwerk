@@ -263,30 +263,29 @@
                                     <div class="bg-licht rounded-lb my-4 p-3">
                                         <div class="row row-cols-2 row-cols-md-4 g-4">
                                             <div class="d-flex flex-column justify-content-start">
-                                                <img src="images/check.svg" alt="check"
+                                                <img src="{{asset('images2/check.svg')}}" alt="check"
                                                      class="bg-duister p-3 rounded-lb mt-3">
                                                 <p class="NotoRe text-white fs-7 text-center pt-3">Checked and Certified by
                                                     Finder</p>
                                             </div>
                                             <div class="d-flex flex-column justify-content-start">
-                                                <img src="images/steering-wheel.svg" alt="steeringwheel"
+                                                <img src="{{asset('images2/steering-wheel.svg')}}" alt="steeringwheel"
                                                      class="bg-duister p-3 rounded-lb mt-3">
-                                                <p class="NotoRe text-white fs-7 text-center pt-3">Single Owner</p>
+                                                <p class="NotoRe text-white fs-7 text-center pt-3">Brand new</p>
                                             </div>
                                             <div class="d-flex flex-column justify-content-start">
-                                                <img src="images/driving-test.svg" alt="drivingtest"
+                                                <img src="{{asset('images2/driving-test.svg')}}" alt="drivingtest"
                                                      class="bg-duister p-3 rounded-lb mt-3">
                                                 <p class="NotoRe text-white fs-7 text-center pt-3">Well-equiped</p>
                                             </div>
                                             <div class="d-flex flex-column justify-content-start">
-                                                <img src="images/accident.svg" alt="accident"
+                                                <img src="{{asset('images2/accident.svg')}}" alt="accident"
                                                      class="bg-duister p-3 rounded-lb mt-3">
-                                                <p class="NotoRe text-white fs-7 text-center pt-3">No Accident / Damage
-                                                    Reported</p>
+                                                <p class="NotoRe text-white fs-7 text-center pt-3">Insurance</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+<!--                                    <div class="row">
                                         <h3 class="text-white py-3 fs-3 NotoBo">
                                             Features
                                         </h3>
@@ -448,7 +447,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="row mb-4">
                                         <h3 class="text-white py-3 fs-3 NotoBo">
                                             Seller's Description
@@ -487,11 +486,13 @@
                                     </div>
                                     <p class="NotoBo fs-2 text-white">&#36;{{$car->price}}</p>
                                     <div class="d-flex pb-2">
-                                        <p class="text-white NotoRe border-lb-right pe-3"><i class="bi bi-speedometer pe-2"></i>25K miles</p>
-                                        <p class="text-white NotoRe ps-3"><i class="bi bi-geo-alt pe-2"></i>Chicago, IL 60603</p>
+                                        <p class="text-white NotoRe border-lb-right pe-3"><i class="bi bi-speedometer pe-2"></i>0 miles</p>
+                                        <p class="text-white NotoRe ps-3"><i class="bi bi-geo-alt pe-2"></i>Kortrijk</p>
                                     </div>
                                     <div class="row px-2">
-                                        <div class="bg-licht rounded-lb p-3 mb-4">
+                                        <button class="btn btn-danger rounded-lb text-center NotoBo">Add to Cart
+                                        </button>
+<!--                                        <div class="bg-licht rounded-lb p-3 mb-4">
                                             <p class="NotoRe text-white">private seller</p>
                                             <div class="d-flex align-items-center mb-3">
                                                 <img class="rounded-circle" width="48" height="48" src="images/picDevonLane.jpg" alt="sellerPic">
@@ -512,9 +513,9 @@
                                                 <button class="btn btn-outline-light NotoBo p-2 w-75 mb-2">(316) *** **** - reveal</button>
                                                 <button class="btn btn-danger NotoBo p-2 mb-2 w-75">Send message</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class="border-lb rounded-lb p-3">
-                                            <p class="text-white NotoBo fs-5">Email me price drops and new listings for these search results:</p>
+                                            <p class="text-white NotoBo fs-5">Email me discount and promotion:</p>
                                             <div class="formfooter bg-licht mb-3">
                                                 <form class="row g-0 p-2">
                                                     <div class="col-1 d-flex align-items-center">
@@ -531,7 +532,7 @@
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input bg-transparent border-lb" type="checkbox" id="subscription-agree">
-                                                <label class="form-check-label fs-7 text-white-50 NotoRe" for="subscription-agree">I agree to receive price drop alerts on this vehicle and helpful shopping information.</label>
+                                                <label class="form-check-label fs-7 text-white-50 NotoRe" for="subscription-agree">I agree to receive discount and promotion emails.</label>
                                             </div>
                                         </div>
                                     </div>
