@@ -24,9 +24,11 @@ class DatabaseSeeder extends Seeder
             DrivetrainTableSeeder::class,
             TransmissionTableSeeder::class,
             BrandsTableSeeder::class,
+            BodytypesTableSeeder::class,
             CarsTableSeeder::class,
             ColorsTableSeeder::class,
             CarsColorsTableSeeder::class,
+
         ]);
     }
 }

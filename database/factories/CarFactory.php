@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Bodytype;
 use App\Models\Brand;
 use App\Models\Drivetrain;
 use App\Models\Fueltype;
@@ -29,6 +30,7 @@ class CarFactory extends Factory
         $drivetrains = Drivetrain::all()->count();
         $transmissions = Transmission::all()->count();
         $fueltypes = Fueltype::all()->count();
+        $bodytypes = Bodytype::all()->count();
 
         /*$name = $fakervehicle->vehicle();
         $slug = Str::slug($name, '-');*/
@@ -43,6 +45,7 @@ class CarFactory extends Factory
             'drivetrain_id' => $this->faker->numberBetween($min = 1, $max = $drivetrains),
             'transmission_id' => $this->faker->numberBetween($min = 1, $max = $transmissions),
             'fueltype_id' => $this->faker->numberBetween($min = 1, $max = $fueltypes),
+            'bodytype_id' => $this->faker->numberBetween($min = 1, $max = $bodytypes),
             'buildyear' => $this->faker->numberBetween($min = 1980, $max = 2022),
             'body' => $this->faker->realText($maxNbChars=190, $indexSize=2),
             'price' =>$this->faker->numberBetween($min = 8000, $max = 40000),

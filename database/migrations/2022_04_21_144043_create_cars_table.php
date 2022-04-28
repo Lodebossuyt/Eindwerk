@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('drivetrain_id')->index();
             $table->unsignedBigInteger('transmission_id')->index();
             $table->unsignedBigInteger('fueltype_id')->index();
+            $table->unsignedBigInteger('bodytype_id')->index();
             $table->string('buildyear')->nullable();
             $table->text('body');
             $table->decimal('price', 10, 2);

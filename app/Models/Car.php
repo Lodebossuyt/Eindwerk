@@ -32,4 +32,7 @@ class Car extends Model
     public function fueltype(){
         return $this->belongsTo(Fueltype::class);
     }
+    public function bodytype(){
+        return $this->belongsTo(Bodytype::class);
+    }
 }

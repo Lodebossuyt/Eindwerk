@@ -149,78 +149,75 @@
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto">
                     <div class="row">
                         <div id="catalogusFilters" class="d-none d-lg-flex flex-lg-column col-lg-3">
-<!--                            <div id="catalogusNewused">
-                                <ul class="nav nav-pills pb-4">
-                                    <li class="nav-item me-3">
-                                        <a class="nav-link bg-licht text-white NotoRe" href="#">Search New</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link bg-white active text-danger NotoRe" aria-current="page"
-                                           href="#">Search Used</a>
-                                    </li>
-                                </ul>
-                            </div>-->
+                            <!--                            <div id="catalogusNewused">
+                                                            <ul class="nav nav-pills pb-4">
+                                                                <li class="nav-item me-3">
+                                                                    <a class="nav-link bg-licht text-white NotoRe" href="#">Search New</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link bg-white active text-danger NotoRe" aria-current="page"
+                                                                       href="#">Search Used</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>-->
                             <div id="catalogusSelection" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Selection</h2>
-                                <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">Under 2019<i
-                                        class="bi bi-x-lg ps-2"></i></button>
-                                <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">crossover<i
-                                        class="bi bi-x-lg ps-2"></i></button>
-                                <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">Sedan<i
-                                        class="bi bi-x-lg ps-2"></i></button>
+                                @foreach($brandFilters as $brand)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$brand}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
+                                @foreach($bodytypeFilters as $bodytype)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$bodytype}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
+                                @foreach($drivetrainFilters as $drivetrain)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$drivetrain}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
+                                @foreach($fueltypeFilters as $fueltype)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$fueltype}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
+                                @foreach($transmissionFilters as $transmission)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$transmission}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
+                                @foreach($colorFilters as $color)
+                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$color}}<i
+                                            class="bi bi-x-lg ps-2"></i></button>
+                                @endforeach
                             </div>
-                            <div id="catalogusLocation" class="py-4">
-                                <h2 class="text-white NotoBo fs-5">Location</h2>
-                                <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100">
-                                    <option>Select location</option>
-                                    <option>Chicago</option>
-                                    <option>Dallas</option>
-                                    <option>Los Angeles</option>
-                                </select>
+                            <!--                            <div id="catalogusLocation" class="py-4">
+                                                            <h2 class="text-white NotoBo fs-5">Location</h2>
+                                                            <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100">
+                                                                <option>Select location</option>
+                                                                <option>Chicago</option>
+                                                                <option>Dallas</option>
+                                                                <option>Los Angeles</option>
+                                                            </select>
+                                                        </div>-->
+                            <div id="catalogusBrand" class="py-4">
+                                <h2 class="text-white NotoBo fs-5">Brands</h2>
+                                <div id="checkboxBodys" class="d-flex flex-column">
+                                    @foreach($brands as $brand)
+                                        <div>
+                                            <input class="form-check-input bg-transparent" wire:model="brandFilters"
+                                                   value="{{$brand->name}}" type="checkbox">
+                                            <label class="form-check-label text-white NotoRe">{{$brand->name}}</label>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                             <div id="catalogusBodyType" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Body Type</h2>
                                 <div id="checkboxBodys" class="d-flex flex-column">
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Sedan">
-                                        <label class="form-check-label text-white NotoRe" for="Sedan">Sedan</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="suv">
-                                        <label class="text-white NotoRe" for="suv">SUV</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Wagon">
-                                        <label class="text-white NotoRe" for="Wagon">Wagon</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Crossover">
-                                        <label class="text-white NotoRe" for="Crossover">Crossover</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Coupe">
-                                        <label class="text-white NotoRe" for="Coupe">Coupe</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Pickup">
-                                        <label class="text-white NotoRe" for="Pickup">Pickup</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="SportCoupe">
-                                        <label class="text-white NotoRe" for="SportCoupe">Sport Coupe</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Compact">
-                                        <label class="text-white NotoRe" for="Compact">Compact</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="Convertible">
-                                        <label class="text-white NotoRe" for="Convertible">Convertible</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent" type="checkbox" id="FamilyMPV">
-                                        <label class="text-white NotoRe" for="FamilyMPV">Family MPV</label>
-                                    </div>
+                                    @foreach($bodytypes as $body)
+                                        <div>
+                                            <input class="form-check-input bg-transparent" wire:model="bodytypeFilters"
+                                                   value="{{$body->name}}" type="checkbox">
+                                            <label class="form-check-label text-white NotoRe">{{$body->name}}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div id="catalogusYear" class="pb-4">
@@ -241,21 +238,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="catalogusMake" class="pb-4">
-                                <h2 class="text-white NotoBo fs-5">Make & Model</h2>
-                                <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100 border-lb mb-2">
-                                    <option>Any make</option>
-                                    <option>2022</option>
-                                    <option>2021</option>
-                                    <option>2020</option>
-                                </select>
-                                <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100 border-lb">
-                                    <option>Any model</option>
-                                    <option>2021</option>
-                                    <option>2020</option>
-                                    <option>2019</option>
-                                </select>
-                            </div>
+                            <!--                            <div id="catalogusMake" class="pb-4">
+                                                            <h2 class="text-white NotoBo fs-5">Make & Model</h2>
+                                                            <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100 border-lb mb-2">
+                                                                <option>Any make</option>
+                                                                <option>2022</option>
+                                                                <option>2021</option>
+                                                                <option>2020</option>
+                                                            </select>
+                                                            <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 w-100 border-lb">
+                                                                <option>Any model</option>
+                                                                <option>2021</option>
+                                                                <option>2020</option>
+                                                                <option>2019</option>
+                                                            </select>
+                                                        </div>-->
                             <div id="catalogusPrice" class="pb-4">
                                 <h2 class="text-white NotoBo fs-5">Price</h2>
                                 <div class="d-flex align-items-center">
@@ -271,180 +268,82 @@
                             <div id="catalogusDrivetrain" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Drivetrain</h2>
                                 <div id="checkboxDrivetrain" class="d-flex flex-column">
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="AWD">
-                                        <label class="text-white NotoRe" for="AWD">AWD/4WD</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="frontwheel">
-                                        <label class="text-white NotoRe" for="frontwheel">Front Wheel Drive</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="rearwheel">
-                                        <label class="text-white NotoRe" for="rearwheel">Rear Wheel Drive</label>
-                                    </div>
+                                    @foreach($drivetrains as $drivetrain)
+                                        <div>
+                                            <input wire:model="drivetrainFilters"
+                                                   class="form-check-input bg-transparent border-lb"
+                                                   value="{{$drivetrain->name}}" type="checkbox">
+                                            <label class="text-white NotoRe">{{$drivetrain->name}}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div id="catalogusFueltype" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Fuel Type</h2>
                                 <div id="checkboxFueltype" class="d-flex flex-column">
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Diesel">
-                                        <label class="text-white NotoRe" for="Diesel">Diesel</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Electric">
-                                        <label class="text-white NotoRe" for="Electric">Electric</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Gasoline">
-                                        <label class="text-white NotoRe" for="Gasoline">Gasoline</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Hybrid">
-                                        <label class="text-white NotoRe" for="Hybrid">Hybrid</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Hydrogen">
-                                        <label class="text-white NotoRe" for="Hydrogen">Hydrogen</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Plug-in-Hybrid">
-                                        <label class="text-white NotoRe" for="Plug-in-Hybrid">Plug-in-Hybrid</label>
-                                    </div>
+                                    @foreach($fueltypes as $fueltype)
+                                        <div>
+                                            <input wire:model="fueltypeFilters"
+                                                   class="form-check-input bg-transparent border-lb" type="checkbox"
+                                                   value="{{$fueltype->name}}">
+                                            <label class="text-white NotoRe">{{$fueltype->name}}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div id="catalogusTransmission" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Transmission</h2>
                                 <div id="checkboxTransmission" class="d-flex flex-column">
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Automatic">
-                                        <label class="text-white NotoRe" for="Automatic">Automatic</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Manual">
-                                        <label class="text-white NotoRe" for="Manual">Manual</label>
-                                    </div>
+                                    @foreach($transmissions as $transmission)
+                                        <div>
+                                            <input wire:model="transmissionFilters"
+                                                   class="form-check-input bg-transparent border-lb" type="checkbox"
+                                                   value="{{$transmission->name}}">
+                                            <label class="text-white NotoRe">{{$transmission->name}}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div id="catalogusMileage" class="pb-4">
-                                <h2 class="text-white NotoBo fs-5">Mileage</h2>
-                                <div class="d-flex align-items-center">
-                                    <input type="text"
-                                           class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
-                                           placeholder="From">
-                                    <div class="mx-2 px-2 border-bottom-lb"></div>
-                                    <input type="text"
-                                           class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
-                                           placeholder="To">
-                                </div>
-                            </div>
+                            <!--                            <div id="catalogusMileage" class="pb-4">
+                                                            <h2 class="text-white NotoBo fs-5">Mileage</h2>
+                                                            <div class="d-flex align-items-center">
+                                                                <input type="text"
+                                                                       class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                                                       placeholder="From">
+                                                                <div class="mx-2 px-2 border-bottom-lb"></div>
+                                                                <input type="text"
+                                                                       class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                                                       placeholder="To">
+                                                            </div>
+                                                        </div>-->
                             <div id="catalogusColor" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Color</h2>
                                 <div id="checkboxColor" class="d-flex flex-column">
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Amber">
-                                        <label class="text-white NotoRe" for="Amber">Amber</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Azure">
-                                        <label class="text-white NotoRe" for="Azure">Azure</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Beige">
-                                        <label class="text-white NotoRe" for="Beige">Beige</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Black">
-                                        <label class="text-white NotoRe" for="Black">Black</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Blue">
-                                        <label class="text-white NotoRe" for="Blue">Blue</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Brown">
-                                        <label class="text-white NotoRe" for="Brown">Brown</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Camouflagegreen">
-                                        <label class="text-white NotoRe" for="Camouflagegreen">Camouflage green</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Charcoal">
-                                        <label class="text-white NotoRe" for="Charcoal">Charcoal</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Gray">
-                                        <label class="text-white NotoRe" for="Gray">Gray</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Green">
-                                        <label class="text-white NotoRe" for="Green">Green</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Gold">
-                                        <label class="text-white NotoRe" for="Gold">Gold</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Purple">
-                                        <label class="text-white NotoRe" for="Purple">Purple</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Red">
-                                        <label class="text-white NotoRe" for="Red">Red</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="White">
-                                        <label class="text-white NotoRe" for="White">White</label>
-                                    </div>
-                                    <div>
-                                        <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                               id="Yellow">
-                                        <label class="text-white NotoRe" for="Yellow">Yellow</label>
-                                    </div>
-                                </div>
-                                <div id="catalogusSellers" class="py-4">
-                                    <h2 class="text-white NotoBo fs-5">Sellers</h2>
-                                    <div id="checkboxSellers" class="d-flex flex-column">
+                                    @foreach($colors as $color)
                                         <div>
-                                            <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                                   id="DealersOnly">
-                                            <label class="text-white NotoRe" for="DealersOnly">Dealers Only</label>
+                                            <input wire:model="colorFilters"
+                                                   class="form-check-input bg-transparent border-lb" type="checkbox"
+                                                   value="{{$color->name}}">
+                                            <label class="text-white NotoRe">{{$color->name}}</label>
                                         </div>
-                                        <div>
-                                            <input class="form-check-input bg-transparent border-lb" type="checkbox"
-                                                   id="PrivateSellersOnly">
-                                            <label class="text-white NotoRe" for="PrivateSellersOnly">Private Sellers
-                                                Only</label>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
+                                <!--                                <div id="catalogusSellers" class="py-4">
+                                                                    <h2 class="text-white NotoBo fs-5">Sellers</h2>
+                                                                    <div id="checkboxSellers" class="d-flex flex-column">
+                                                                        <div>
+                                                                            <input class="form-check-input bg-transparent border-lb" type="checkbox"
+                                                                                   id="DealersOnly">
+                                                                            <label class="text-white NotoRe" for="DealersOnly">Dealers Only</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input class="form-check-input bg-transparent border-lb" type="checkbox"
+                                                                                   id="PrivateSellersOnly">
+                                                                            <label class="text-white NotoRe" for="PrivateSellersOnly">Private Sellers
+                                                                                Only</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>-->
                             </div>
                         </div>
                         <div id="catalogusMain" class="col-12 col-lg-9 ps-4">
@@ -462,7 +361,8 @@
                             <div class="row pb-4">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h2 class="text-white NotoBo display-5">Cars</h2>
-                                    <p class="text-white NotoRe m-0"><i class="fas fa-car pe-2"></i> {{$cars->count()}} offers</p>
+                                    <p class="text-white NotoRe m-0"><i class="fas fa-car pe-2"></i> {{$cars->total()}}
+                                        offers</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -475,9 +375,9 @@
                                         <option>Price: Low - High</option>
                                         <option>Price: High - Low</option>
                                     </select>
-<!--                                    <div class="border-lb-right py-3 px-2 me-2"></div>
-                                    <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
-                                            class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>-->
+                                    <!--                                    <div class="border-lb-right py-3 px-2 me-2"></div>
+                                                                        <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
+                                                                                class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>-->
                                 </div>
                             </div>
                             <div id="catalogusCarCards" class="row">
@@ -486,9 +386,10 @@
 
                                         <div>
                                             <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
+                                                <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img
+                                                        src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
+                                                        class="card-img-top rounded-lb-top"
+                                                        alt="mercedes"></a>
                                                 <div
                                                     class="showbadges w-100 d-flex justify-content-between align-items-center">
                                                     <div class="d-flex flex-column p-2">
@@ -505,28 +406,30 @@
                                                 <div class="card-body d-flex flex-column">
                                                     <div class="d-flex justify-content-between">
                                                         <p class="NotoRe">{{$car->buildyear}}</p>
-<!--                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault1">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault1">
-                                                                Compare
-                                                            </label>
-                                                        </div>-->
+                                                        <!--                                                        <div class="form-check">
+                                                                                                                    <input class="form-check-input" type="checkbox" value=""
+                                                                                                                           id="flexCheckDefault1">
+                                                                                                                    <label class="form-check-label NotoRe"
+                                                                                                                           for="flexCheckDefault1">
+                                                                                                                        Compare
+                                                                                                                    </label>
+                                                                                                                </div>-->
                                                     </div>
-                                                    <a href="{{route('detailpage', $car->slug)}}" class="text-decoration-none"><h3
+                                                    <a href="{{route('detailpage', $car->slug)}}"
+                                                       class="text-decoration-none"><h3
                                                             class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3></a>
+                                                            {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3>
+                                                    </a>
                                                     <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>
-<!--                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>-->
+                                                    <!--                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
+                                                                                                        </p>-->
                                                     <hr>
                                                     <div class="infowrap">
                                                         <div class="row row-cols-3 g-2 text-white">
                                                             <div class="col text-center">
                                                                 <div class="bg-dark rounded-3 pt-2 pb-1">
                                                                     <i class="bi bi-speedometer"></i>
-                                                                    <p>{{$car->drivetrain->name}}</p>
+                                                                    <p>{{$car->bodytype->name}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="col text-center">
@@ -802,26 +705,25 @@
                                             </div>
                                         </div>
                                     </div>-->
-
                                 </div>
                             </div>
                             <div class="row pt-4 pe-3 pb-4">
                                 <div class="d-flex flex-wrap justify-content-center align-items-center">
-<!--                                    <p class="text-white NotoRe pe-3 m-0"><i class="bi bi-arrow-down-up pe-2"></i> Sort
-                                        by:</p>
-                                    <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
-                                        <option>Newest</option>
-                                        <option>Popular</option>
-                                        <option>Price: Low - High</option>
-                                        <option>Price: High - Low</option>
-                                    </select>
-                                    <div class="border-lb-right py-3 px-2 me-2"></div>
-                                    <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
-                                            class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>
-                                    <p class="text-white NotoRe m-0 ms-auto d-md-none"><i class="bi bi-caret-left"></i>1/5<i
-                                            class="bi bi-caret-right"></i></p>-->
+                                    <!--                                    <p class="text-white NotoRe pe-3 m-0"><i class="bi bi-arrow-down-up pe-2"></i> Sort
+                                                                            by:</p>
+                                                                        <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
+                                                                            <option>Newest</option>
+                                                                            <option>Popular</option>
+                                                                            <option>Price: Low - High</option>
+                                                                            <option>Price: High - Low</option>
+                                                                        </select>
+                                                                        <div class="border-lb-right py-3 px-2 me-2"></div>
+                                                                        <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
+                                                                                class="bi bi-arrow-left-right pe-2"></i> Compare (0)</p>
+                                                                        <p class="text-white NotoRe m-0 ms-auto d-md-none"><i class="bi bi-caret-left"></i>1/5<i
+                                                                                class="bi bi-caret-right"></i></p>-->
                                 {{ $cars->links('layouts.custom-pagination') }}
-<!--                                    <nav aria-label="Page navigation example"
+                                <!--                                    <nav aria-label="Page navigation example"
                                          class="d-none d-md-inline-flex ms-md-auto">
                                         <ul class="pagination justify-content-end m-0">
                                             <li class="page-item disabled">

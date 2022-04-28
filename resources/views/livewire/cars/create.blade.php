@@ -42,6 +42,15 @@
             <div>@error('fueltype_id') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
         </div>
         <div class="mb-3">
+            <label class="form-label" for="roles">Bodytypes:</label>
+            <select wire:model="bodytype_id" class="form-control" id="roles">
+                @foreach($bodytypes as $bodytype)
+                    <option wire:key="{{$loop->index}}"  value="{{$bodytype->id}}">{{$bodytype->name}}</option>
+                @endforeach
+            </select>
+            <div>@error('fueltype_id') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+        </div>
+        <div class="mb-3">
             <label class="form-label" for="buildyear">Buildyear:</label>
             <input wire:model="buildyear" class="form-control" type="number" min="1900" max="2022" id="buildyear">
             <div>@error('buildyear') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
