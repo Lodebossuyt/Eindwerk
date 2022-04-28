@@ -31,6 +31,11 @@ class Webshop extends Component
     public $bodytypeFilters = [];
     public $colorFilters = [];
 
+    public $buildyearMin;
+    public $buildyearMax;
+    public $priceMin;
+    public $priceMax;
+
     public function updatedBrandFilters(){
         $this->resetPage();
     }
@@ -47,6 +52,18 @@ class Webshop extends Component
         $this->resetPage();
     }
     public function updatedColorFilters(){
+        $this->resetPage();
+    }
+    public function updatedBuildyearMin(){
+        $this->resetPage();
+    }
+    public function updatedBuildyearMax(){
+        $this->resetPage();
+    }
+    public function updatedPriceMin(){
+        $this->resetPage();
+    }
+    public function updatedPriceMax(){
         $this->resetPage();
     }
 
@@ -90,6 +107,18 @@ class Webshop extends Component
                 $query ->whereHas('colors', function($query){
                     $query->whereIn('name', $this->colorFilters);
                 });
+            })
+            ->when($this->buildyearMin, function ($query){
+                $query ->where('buildyear', '>', $this->buildyearMin);
+            })
+            ->when($this->buildyearMax, function ($query){
+                $query ->where('buildyear', '<', $this->buildyearMax);
+            })
+            ->when($this->priceMin, function ($query){
+                $query ->where('price', '>', $this->priceMin);
+            })
+            ->when($this->priceMax, function ($query){
+                $query ->where('price', '<', $this->priceMax);
             })
             ->paginate(6);
 

@@ -220,22 +220,16 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div id="catalogusYear" class="pb-4">
-                                <h2 class="text-white NotoBo fs-5">Year</h2>
+                            <div id="catalogusPrice" class="pb-4">
+                                <h2 class="text-white NotoBo fs-5">BuildYear</h2>
                                 <div class="d-flex align-items-center">
-                                    <select class="NotoRe bg-licht text-white-50 rounded-3 w-100">
-                                        <option>From</option>
-                                        <option>2022</option>
-                                        <option>2021</option>
-                                        <option>2020</option>
-                                    </select>
+                                    <input type="text" wire:model="buildyearMin"
+                                           class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                           placeholder="Min">
                                     <div class="mx-2 px-2 border-bottom-lb"></div>
-                                    <select class="NotoRe bg-licht text-white-50 rounded-3 w-100">
-                                        <option>2022</option>
-                                        <option>2021</option>
-                                        <option>2020</option>
-                                        <option>2019</option>
-                                    </select>
+                                    <input type="text" wire:model="buildyearMax"
+                                           class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                           placeholder="Max">
                                 </div>
                             </div>
                             <!--                            <div id="catalogusMake" class="pb-4">
@@ -256,13 +250,13 @@
                             <div id="catalogusPrice" class="pb-4">
                                 <h2 class="text-white NotoBo fs-5">Price</h2>
                                 <div class="d-flex align-items-center">
-                                    <input type="text"
+                                    <input type="text" wire:model="priceMin"
                                            class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
-                                           placeholder="21000">
+                                           placeholder="Min">
                                     <div class="mx-2 px-2 border-bottom-lb"></div>
-                                    <input type="text"
+                                    <input type="text" wire:model="priceMax"
                                            class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
-                                           placeholder="73000">
+                                           placeholder="Max">
                                 </div>
                             </div>
                             <div id="catalogusDrivetrain" class="py-4">
