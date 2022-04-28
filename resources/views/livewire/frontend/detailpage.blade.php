@@ -455,12 +455,8 @@
                                         </h3>
 
                                         <p class="text-white-50 NotoRe">
-                                            Lorem tincidunt lectus vitae id vulputate diam quam. Imperdiet non scelerisque
-                                            turpis sed etiam ultrices. Blandit mollis dignissim egestas consectetur porttitor.
-                                            Vulputate dolor pretium, dignissim eu augue sit ut convallis. Lectus est, magna urna
-                                            feugiat sed ultricies sed in lacinia. Fusce potenti sit id pharetra vel ornare.
-                                            Vestibulum sed tellus ullamcorper arcu.</p>
-                                        <div class="collapse text-white-50 NotoRe" id="collapseExample">Asperiores eos
+                                            {{$car->body}}</p>
+<!--                                        <div class="collapse text-white-50 NotoRe" id="collapseExample">Asperiores eos
                                             molestias, aspernatur assumenda vel corporis ex, magni excepturi totam
                                             exercitationem quia inventore quod amet labore impedit quae distinctio? Officiis
                                             blanditiis consequatur alias, atque, sed est incidunt accusamus repudiandae tempora
@@ -468,15 +464,15 @@
                                             eligendi culpa.
                                         </div>
                                         <a class="text-danger NotoRe" data-bs-toggle="collapse" href="#collapseExample"
-                                           role="button" aria-expanded="false" aria-controls="collapseExample">Show more</a>
+                                           role="button" aria-expanded="false" aria-controls="collapseExample">Show more</a>-->
                                     </div>
                                     <hr class="hr-light2">
                                     <div class="row">
                                         <div class="d-flex">
                                             <p class="NotoRe text-white-50 fs-7 pe-3">Published: <span
-                                                    class="NotoBo text-white-50">May 9,2021</span></p>
+                                                    class="NotoBo text-white-50">{{$car->created_at->diffForHumans()}}</span></p>
                                             <p class="NotoRe text-white-50 fs-7 pe-3">Ad number: <span
-                                                    class="NotoBo text-white-50">681013232</span></p>
+                                                    class="NotoBo text-white-50">{{$car->id}}</span></p>
                                             <p class="NotoRe text-white-50 fs-7 pe-3">Views: <span class="NotoBo text-white-50">75</span>
                                             </p>
                                         </div>
@@ -486,10 +482,10 @@
                             <div class="col-md-5 mb-3">
                                 <div>
                                     <div class="d-flex pb-3">
-                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">Used</span>
+<!--                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">Used</span>-->
                                         <span class="badge bg-success NotoRe fw-light fs-6 text-white">Certified</span>
                                     </div>
-                                    <p class="NotoBo fs-2 text-white">&#36;31,900</p>
+                                    <p class="NotoBo fs-2 text-white">&#36;{{$car->price}}</p>
                                     <div class="d-flex pb-2">
                                         <p class="text-white NotoRe border-lb-right pe-3"><i class="bi bi-speedometer pe-2"></i>25K miles</p>
                                         <p class="text-white NotoRe ps-3"><i class="bi bi-geo-alt pe-2"></i>Chicago, IL 60603</p>

@@ -371,7 +371,6 @@
                                         by:</p>
                                     <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
                                         <option>Newest</option>
-                                        <option>Popular</option>
                                         <option>Price: Low - High</option>
                                         <option>Price: High - Low</option>
                                     </select>
