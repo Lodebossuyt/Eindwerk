@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             CarsTableSeeder::class,
             ColorsTableSeeder::class,
             CarsColorsTableSeeder::class,
-
+            AdresstypesTableSeeder::class,
         ]);
     }
 }

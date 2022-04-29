@@ -35,4 +35,7 @@ class Car extends Model
     public function bodytype(){
         return $this->belongsTo(Bodytype::class);
     }
+    public function orderitems(){
+        return $this->hasMany(Orderitem::class);
+    }
 }

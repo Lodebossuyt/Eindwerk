@@ -196,7 +196,7 @@
                                                                 <option>Los Angeles</option>
                                                             </select>
                                                         </div>-->
-                            <div id="catalogusBrand" class="py-4">
+                            <div id="catalogusBodyType" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Brands</h2>
                                 <div id="checkboxBodys" class="d-flex flex-column">
                                     @foreach($brands as $brand)

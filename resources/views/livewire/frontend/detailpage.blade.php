@@ -153,7 +153,7 @@
                                     aria-current="page">Used cars
                                 </li>-->
                                 <li class="breadcrumb-item active text-white text-decoration-none NotoRe" aria-current="page">
-                                    {{$car->name . ' ' . $car->brand->file}}
+                                    {{$car->name . ' ' . $car->brand->name}}
                                 </li>
                             </ol>
                         </nav>
