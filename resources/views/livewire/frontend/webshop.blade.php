@@ -376,7 +376,6 @@
                             <div id="catalogusCarCards" class="row">
                                 <div class="d-flex row row-cols-1 row-cols-md-2 g-3">
                                     @foreach($cars as $car)
-
                                         <div>
                                             <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
                                                 <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img

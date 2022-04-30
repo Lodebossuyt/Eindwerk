@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Frontend;
 
 use App\Models\Car;
+use App\Models\Cart;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class Detailpage extends Component
@@ -11,6 +13,18 @@ class Detailpage extends Component
 
     public function mount($slug){
         $this->car = Car::where('slug', $slug)->first();
+    }
+
+    public function addToCart($id){
+        $product = Car::findOrFail($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $id);
+        Session::put('cart', $cart);
+
+        $this->car = $product;
+
+        $this->emit('refreshCartIcon');
     }
 
     public function render()

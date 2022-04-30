@@ -490,7 +490,7 @@
                                         <p class="text-white NotoRe ps-3"><i class="bi bi-geo-alt pe-2"></i>Kortrijk</p>
                                     </div>
                                     <div class="row px-2">
-                                        <button class="btn btn-danger rounded-lb text-center NotoBo">Add to Cart
+                                        <button wire:click="addToCart({{$car->id}})" class="btn btn-danger rounded-lb text-center mb-3 NotoBo">Add to Cart
                                         </button>
 <!--                                        <div class="bg-licht rounded-lb p-3 mb-4">
                                             <p class="NotoRe text-white">private seller</p>

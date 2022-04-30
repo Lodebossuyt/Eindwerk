@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('bodytype_id')->index();
             $table->string('buildyear')->nullable();
             $table->text('body');
-            $table->decimal('price', 10, 2);
+            $table->unsigneddecimal('price', 10, 2);
             $table->timestamps();
         });
     }
