@@ -31,7 +31,7 @@
                     <span>&euro; {{Session::has('cart') ? Session::get('cart')->totalPrice : '0'}}</span>
                 </li>
             </ul>
-            <a href="checkout.html" class="btn btn-danger w-100 NotoBo text-white">Checkout</a>
+            <a href="{{route('checkout')}}" class="btn btn-danger w-100 NotoBo text-white">Checkout</a>
 
         </div>
     </div>

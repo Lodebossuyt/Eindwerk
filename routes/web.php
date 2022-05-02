@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/webshop', App\Http\Livewire\Frontend\Webshop::class)->name('webshop');
 Route::get('/webshop-{slug}',App\Http\Livewire\Frontend\Detailpage::class)->name('detailpage');
 Route::get('/mycart',App\Http\Livewire\Frontend\Mycart::class)->name('mycart');
+Route::get('/checkout', App\Http\Livewire\Frontend\Checkout::class)->name('checkout');
 
 /**Backend Routes**/
 /*Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);*/
