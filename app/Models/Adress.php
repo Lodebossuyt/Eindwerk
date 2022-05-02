@@ -12,9 +12,9 @@ class Adress extends Model
     protected $guarded = ['id'];
 
     public function adresstypes(){
-        $this->belongsToMany(Adresstype::class, 'adress_adresstype');
+        return $this->belongsToMany(Adresstype::class, 'adress_adresstype');
     }
     public function users(){
-        $this->belongsToMany(User::class, 'adress_user');
+        return $this->belongsToMany(User::class, 'adress_user');
     }
 }

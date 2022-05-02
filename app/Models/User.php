@@ -48,9 +48,9 @@ class User extends Authenticatable
         return $this->morphToMany(Photo::class, 'photoable');
     }
     public function adresses(){
-        $this->belongsToMany(Adress::class, 'adress_user');
+        return $this->belongsToMany(Adress::class, 'adress_user');
     }
     public function orders(){
-        $this->hasMany(Order::class);
+        return $this->hasMany(Order::class);
     }
 }

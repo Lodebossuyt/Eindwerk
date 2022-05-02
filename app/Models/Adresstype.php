@@ -12,6 +12,6 @@ class Adresstype extends Model
     protected $guarded = ['id'];
 
     public function adresses(){
-        $this->belongsToMany(Adress::class, 'adress_adresstype');
+        return $this->belongsToMany(Adress::class, 'adress_adresstype');
     }
 }
