@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('transactioncode');
-            $table->string('shippingadress');
-            $table->string('billingadress');
-            $table->unsignedBigInteger('user_id');
+            $table->string('transactioncode')->nullable();
+            $table->string('shippingadress')->nullable();
+            $table->string('billingadress')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

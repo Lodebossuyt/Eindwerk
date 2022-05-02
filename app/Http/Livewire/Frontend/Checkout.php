@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Frontend;
 
 use Livewire\Component;
+use Mollie\Laravel\Facades\Mollie;
 
 class Checkout extends Component
 {

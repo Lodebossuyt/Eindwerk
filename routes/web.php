@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::get('/webshop', App\Http\Livewire\Frontend\Webshop::class)->name('webshop
 Route::get('/webshop-{slug}',App\Http\Livewire\Frontend\Detailpage::class)->name('detailpage');
 Route::get('/mycart',App\Http\Livewire\Frontend\Mycart::class)->name('mycart');
 Route::get('/checkout', App\Http\Livewire\Frontend\Checkout::class)->name('checkout');
+
+/**Payment Routes**/
+Route::get('mollie-payment',[MollieController::Class,'preparePayment'])->name('mollie.payment');
+Route::get('payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
 
 /**Backend Routes**/
 /*Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);*/

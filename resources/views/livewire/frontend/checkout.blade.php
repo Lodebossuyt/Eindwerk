@@ -254,7 +254,7 @@
                                 </form>
                             </div>
                             <div id="checkoutbutton" class="bg-licht rounded-lb2 p-3 my-3">
-                                <button class="btn btn-danger text-white NotoBo w-100 mb-3">Place Order</button>
+                                <a href="{{route('mollie.payment')}}" class="btn btn-danger text-white NotoBo w-100 mb-3">Place Order</a>
                                 <p class="NotoRe fs-7 text-white-50">By placing your order you agree to our Terms & Conditions, privacy and returns policies. You also consent to some of your data being stored by SHOPY, which may be used to make future shopping experiences better for you.</p>
                             </div>
                         </div>
