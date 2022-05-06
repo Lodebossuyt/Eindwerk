@@ -46,19 +46,19 @@
                                 <li class="nav-item d-lg-none px-2 px-xl-3">
                                     <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login" class="nav-link NotoBo"><i class="bi bi-person "></i> Sign in</a>
                                 </li>
-                                <li class="nav-item d-lg-none px-xl-3">
+<!--                                <li class="nav-item d-lg-none px-xl-3">
                                     <a class="btn btn-danger NotoBo" href="">
                                         <i class="bi bi-plus"></i>Sell Car
                                     </a>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                         <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
                             <i class="bi bi-person"></i> Sign in
                         </a>
-                        <a class="btn btn-danger ms-3 NotoBo d-none d-lg-block" href="">
+<!--                        <a class="btn btn-danger ms-3 NotoBo d-none d-lg-block" href="">
                             <i class="bi bi-plus"></i>Sell Car
-                        </a>
+                        </a>-->
                     </div>
                 </nav>
             </div>

@@ -35,18 +35,29 @@
                                         <p class="NotoRe text-white-50 px-3 m-0">Or</p>
                                         <hr class="w-100 hr-light2">
                                     </div>
-                                    <form class="signinform">
+                                    <form method="POST" action="{{ route('login') }}" class="signinform">
+                                        @csrf
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
                                                 address</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
+                                            <input name="email" value="{{ old('email') }}" type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputEmail2" placeholder="Enter your email">
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-4">
                                             <label for="exampleInputPassword" class="form-label text-white NotoRe">Password</label>
-                                            <input type="password"
+                                            <input name="password" type="password"
                                                    class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputPassword" placeholder="Enter password">
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <button type="submit" class="btn btn-danger NotoBo rounded-3 w-100 py-2">Sign
                                             in
@@ -98,29 +109,46 @@
                                         <p class="NotoRe text-white-50 px-3 m-0">Or</p>
                                         <hr class="w-100 hr-light2">
                                     </div>
-                                    <form class="signinform">
+                                    <form method="POST" action="{{ route('register') }}" class="signinform">
+                                        @csrf
+
                                         <div class="mb-3">
                                             <label for="exampleInputEmail3" class="form-label text-white NotoRe">Full
                                                 name</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
+                                            <input name="name" type="text" class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputEmail3" placeholder="Enter your full name">
+                                            @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
                                                 address</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
+                                            <input name="email" type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputEmail1" placeholder="Enter your email">
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label text-white NotoRe">Password
                                                 <span class="text-white-50">min.8 char</span></label>
-                                            <input type="password"
+                                            <input name="password" type="password"
                                                    class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputPassword1">
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword2" class="form-label text-white NotoRe">Password</label>
-                                            <input type="password"
+                                            <input name="password_confirmation" type="password"
                                                    class="form-control bg-licht text-white-50 NotoRe p-2"
                                                    id="exampleInputPassword2">
                                         </div>
@@ -168,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row d-none">
                     <div class="col-12 col-lg-10 col-xl-8 mx-auto">
                         <div class="row">
                             <ul class="nav nav-pills">
@@ -678,7 +706,7 @@
                                 <h2 class="NotoBo text-white">Latest cars</h2>
                             </header>
                             <div class="d-flex align-items-center">
-                                <ul class="nav nav-pills">
+                                <ul class="nav nav-pills d-none">
                                     <li class="nav-item">
                                         <a class="nav-link bg-white active text-danger NotoRe" aria-current="page"
                                            href="#">New</a>

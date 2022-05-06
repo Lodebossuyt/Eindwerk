@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Frontend;
 
+use App\Models\Adress;
 use App\Models\Order;
 use App\Models\Orderitem;
 use Illuminate\Support\Facades\Auth;
@@ -21,10 +22,10 @@ class Checkout extends Component
     public $shippingZipcode;
 
     /**Billing address**/
-    public $BillingAddress;
-    public $BillingCity;
-    public $BillingCountry;
-    public $BillingZipcode;
+    public $billingAddress;
+    public $billingCity;
+    public $billingCountry;
+    public $billingZipcode;
 
     public function mount(){
         if(Auth::user()->adresses){
@@ -59,11 +60,59 @@ class Checkout extends Component
             'redirectUrl' => route('payment.success'), // after the payment completion where you to redirect
         ]);
 
+        /**Adressen wegschrijven**/
+        if($this->addressType == 'true'){
+            /*nieuw address*/
+            $shipping = new Adress();
+            $shipping->adress = $this->shippingAddress;
+            $shipping->city = $this->shippingCity;
+            $shipping->country = $this->shippingCountry;
+            $shipping->zipcode = $this->shippingZipcode;
+            $shipping->save();
+
+            /*nieuw adress type*/
+            $shipping->adresstypes()->sync([1,2], true);
+
+            /*addressen aan user hangen*/
+            Auth::user()->adresses()->sync($shipping->id);
+        }else{
+            $shipping = new Adress();
+            $shipping->adress = $this->shippingAddress;
+            $shipping->city = $this->shippingCity;
+            $shipping->country = $this->shippingCountry;
+            $shipping->zipcode = $this->shippingZipcode;
+            $shipping->save();
+
+            /*nieuw adress type*/
+            $shipping->adresstypes()->sync(1);
+
+            $billing = new Adress();
+            $billing->adress = $this->billingAddress;
+            $billing->city = $this->billingCity;
+            $billing->country = $this->billingCountry;
+            $billing->zipcode = $this->billingZipcode;
+            $billing->save();
+
+            /*nieuw adress type*/
+            $billing->adresstypes()->sync(2);
+
+            /*addressen aan user hangen*/
+            Auth::user()->adresses()->sync([$shipping->id,$billing->id]);
+        }
+
         /**Order wegschrijven**/
         $payment = Mollie::api()->payments()->get($payment->id);
         $order = new Order();
         $order->transactioncode = $payment->id;
         $order->user_id = Auth::user()->id;
+        if($this->addressType == 'true'){
+            $order->shippingadress = $shipping->adress . ' ' . $shipping->city . ' ' . $shipping->zipcode . ' ' . $shipping->country;
+            $order->billingadress = $shipping->adress . ' ' . $shipping->city . ' ' . $shipping->zipcode . ' ' . $shipping->country;
+        }else{
+            $order->shippingadress = $shipping->adress . ' ' . $shipping->city . ' ' . $shipping->zipcode . ' ' . $shipping->country;
+            $order->billingadress = $billing->adress . ' ' . $billing->city . ' ' . $billing->zipcode . ' ' . $billing->country;
+        }
+
         $order->save();
 
         /**Order items wegschrijven**/
