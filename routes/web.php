@@ -34,8 +34,6 @@ Route::get('mollie-payment',[App\Http\Livewire\Frontend\Checkout::class,'prepare
 Route::get('payment-success',[App\Http\Livewire\Frontend\Checkout::class, 'paymentSuccess'])->name('payment.success');
 
 /**Backend Routes**/
-/*Route::resource('/backend/users', App\Http\Controllers\BackendUsersController::class);*/
-
 Route::group(['prefix'=>'backend', 'middleware'=>'admin'], function(){
     Route::get('/users', App\Http\Livewire\IndexUser::class)->name('users.index');
     Route::get('/users/create', App\Http\Livewire\CreateUser::class)->name('users.create');

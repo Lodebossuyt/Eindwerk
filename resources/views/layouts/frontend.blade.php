@@ -43,9 +43,16 @@
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
                                 </li>
-                                <li class="nav-item d-lg-none px-2 px-xl-3">
-                                    <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login" class="nav-link NotoBo"><i class="bi bi-person "></i> Sign in</a>
-                                </li>
+                                @if(Auth::check())
+                                    <li class="nav-item d-lg-none px-2 px-xl-3">
+                                        <a class="nav-link NotoBo"><i class="bi bi-person "></i> {{Auth::user()->name}}</a>
+                                    </li>
+                                @else
+                                    <li class="nav-item d-lg-none px-2 px-xl-3">
+                                        <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login" class="nav-link NotoBo"><i class="bi bi-person "></i> Sign in</a>
+                                    </li>
+                                @endif
+
 <!--                                <li class="nav-item d-lg-none px-xl-3">
                                     <a class="btn btn-danger NotoBo" href="">
                                         <i class="bi bi-plus"></i>Sell Car
@@ -53,9 +60,16 @@
                                 </li>-->
                             </ul>
                         </div>
-                        <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
-                            <i class="bi bi-person"></i> Sign in
-                        </a>
+                        @if(Auth::check())
+                            <a class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                <i class="bi bi-person"></i> {{Auth::user()->name}}
+                            </a>
+                        @else
+                            <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                <i class="bi bi-person"></i> Sign in
+                            </a>
+                        @endif
+
 <!--                        <a class="btn btn-danger ms-3 NotoBo d-none d-lg-block" href="">
                             <i class="bi bi-plus"></i>Sell Car
                         </a>-->
