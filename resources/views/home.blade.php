@@ -2,176 +2,7 @@
 @section('content')
     <main>
         <!--MODAL CONTENT-->
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggle"
-             tabindex="-1">
-            <div class="modal-dialog modal-fullscreen-md-down modal-lg p-2 modal-dialog-centered"
-                 style="max-width: 950px">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btn-close btn-close-white" aria-label="Close"
-                                        data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 border-modal-rechts p-5">
-                                    <header><h2 class="text-white fs-3 mb-4 mb-sm-5">Hey there! <br> Welcome back.</h2>
-                                    </header>
-                                    <img src="{{asset('images2/signin-dark.svg')}}" class="img-fluid" alt="sign in pic">
-                                    <div class="d-flex flex-wrap mt-4 mt-sm-5">
-                                        <p class="text-white-50 pe-2">Don't have an account?</p>
-                                        <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                                           class="text-white" href="#">Sign up here</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 p-5">
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-google pe-2"></i>Sign in with Google</a>
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-facebook pe-2"></i>Sign in with Facebook</a>
-                                    <div class="d-flex align-items-center py-3 mb-3">
-                                        <hr class="w-100 hr-light2">
-                                        <p class="NotoRe text-white-50 px-3 m-0">Or</p>
-                                        <hr class="w-100 hr-light2">
-                                    </div>
-                                    <form method="POST" action="{{ route('login') }}" class="signinform">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
-                                                address</label>
-                                            <input name="email" value="{{ old('email') }}" type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail2" placeholder="Enter your email">
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="exampleInputPassword" class="form-label text-white NotoRe">Password</label>
-                                            <input name="password" type="password"
-                                                   class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword" placeholder="Enter password">
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                        <button type="submit" class="btn btn-danger NotoBo rounded-3 w-100 py-2">Sign
-                                            in
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggle2"
-             tabindex="-1">
-            <div class="modal-dialog modal-fullscreen-md-down modal-lg p-2 modal-dialog-centered"
-                 style="max-width: 950px">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btn-close btn-close-white" aria-label="Close"
-                                        data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 border-modal-rechts p-5">
-                                    <header><h2 class="text-white fs-3 mb-4 mb-sm-5">Join Finder. <br> Get premium
-                                            benefits:</h2></header>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Add
-                                        and promote your listings</p>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Easily
-                                        manage your wishlist</p>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Leave
-                                        reviews</p>
-                                    <img src="{{asset('images2/signup-dark.svg')}}" class="img-fluid" alt="sign in pic">
-                                    <div class="d-flex flex-wrap mt-4 mt-sm-5">
-                                        <p class="text-white-50 pe-2">Already have an account?</p>
-                                        <a class="text-white" data-bs-target="#exampleModalToggle"
-                                           data-bs-toggle="modal" href="#">Sign in</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 p-5">
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-google pe-2"></i>Sign in with Google</a>
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-facebook pe-2"></i>Sign in with Facebook</a>
-                                    <div class="d-flex align-items-center py-3 mb-3">
-                                        <hr class="w-100 hr-light2">
-                                        <p class="NotoRe text-white-50 px-3 m-0">Or</p>
-                                        <hr class="w-100 hr-light2">
-                                    </div>
-                                    <form method="POST" action="{{ route('register') }}" class="signinform">
-                                        @csrf
-
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail3" class="form-label text-white NotoRe">Full
-                                                name</label>
-                                            <input name="name" type="text" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail3" placeholder="Enter your full name">
-                                            @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
-                                                address</label>
-                                            <input name="email" type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail1" placeholder="Enter your email">
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label text-white NotoRe">Password
-                                                <span class="text-white-50">min.8 char</span></label>
-                                            <input name="password" type="password"
-                                                   class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword1">
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword2" class="form-label text-white NotoRe">Password</label>
-                                            <input name="password_confirmation" type="password"
-                                                   class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword2">
-                                        </div>
-                                        <div class="form-check mb-4 NotoRe">
-                                            <input class="form-check-input bg-transparent" type="checkbox" value=""
-                                                   id="flexCheckDefault">
-                                            <label class="form-check-label text-white-50" for="flexCheckDefault">
-                                                By joining, I agree to the <a class="text-white" href="">Terms of
-                                                    use</a> and
-                                                <a class="text-white" href="">Privacy policy.</a>
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="btn btn-danger NotoBo rounded-3 w-100 py-2">Sign
-                                            in
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('includes.modal')
         <div id="bg-top">
             <div id="hero" class="container-fluid">
                 <div class="row">
@@ -697,7 +528,7 @@
                 </div>
             </div>
         </section>
-        <section id="latestcars" class="container-fluid py-5">
+        <section id="latestcars" class="container-fluid py-5 mb-5">
             <div class="row">
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto">
                     <div class="row pb-5">
@@ -732,572 +563,221 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="d-flex">
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img
-                                                        src="{{asset('images2/17.jpg')}}"
-                                                        class="card-img-top rounded-lb-top" alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
+                                        @foreach($cars as $car)
+                                            @if($loop->index < 3)
+                                                <div class="col-12 col-md-6 col-lg-4 px-lg-2">
+                                                    <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
+                                                        <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img
+                                                                src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
+                                                                class="card-img-top rounded-lb-top"
+                                                                alt="mercedes"></a>
+                                                        <div
+                                                            class="showbadges w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex flex-column p-2">
                                                         <span
                                                             class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault3">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault3">
-                                                                Compare
-                                                            </label>
+                                                                <span
+                                                                    class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
+                                                            </div>
+                                                            <button
+                                                                class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
+                                                                <i class="bi bi-suit-heart text-danger"></i>
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
+                                                        <div class="card-body d-flex flex-column">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="NotoRe">{{$car->buildyear}}</p>
+                                                                <!--                                                        <div class="form-check">
+                                                                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                                                                   id="flexCheckDefault1">
+                                                                                                                            <label class="form-check-label NotoRe"
+                                                                                                                                   for="flexCheckDefault1">
+                                                                                                                                Compare
+                                                                                                                            </label>
+                                                                                                                        </div>-->
                                                             </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img
-                                                        src="{{asset('images2/17.jpg')}}"
-                                                        class="card-img-top rounded-lb-top" alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault14">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault14">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
+                                                            <a href="{{route('detailpage', $car->slug)}}"
+                                                               class="text-decoration-none"><h3
+                                                                    class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
+                                                                    {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3>
+                                                            </a>
+                                                            <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>
+                                                            <!--                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
+                                                                                                                </p>-->
+                                                            <hr>
+                                                            <div class="infowrap">
+                                                                <div class="row row-cols-3 g-2 text-white">
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-speedometer"></i>
+                                                                            <p>{{$car->bodytype->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-bezier2"></i>
+                                                                            <p>{{$car->transmission->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-droplet"></i>
+                                                                            <p>{{$car->fueltype->name}}</p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img
-                                                        src="{{asset('images2/17.jpg')}}"
-                                                        class="card-img-top rounded-lb-top" alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault5">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault5">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <div class="d-flex">
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
+                                        @foreach($cars as $car)
+                                            @if($loop->index >= 3 && $loop->index < 6)
+                                                <div class="col-12 col-md-6 col-lg-4 px-lg-2">
+                                                    <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
+                                                        <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img
+                                                                src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
+                                                                class="card-img-top rounded-lb-top"
+                                                                alt="mercedes"></a>
+                                                        <div
+                                                            class="showbadges w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex flex-column p-2">
                                                         <span
                                                             class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault6">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault6">
-                                                                Compare
-                                                            </label>
+                                                                <span
+                                                                    class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
+                                                            </div>
+                                                            <button
+                                                                class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
+                                                                <i class="bi bi-suit-heart text-danger"></i>
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
+                                                        <div class="card-body d-flex flex-column">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="NotoRe">{{$car->buildyear}}</p>
+                                                                <!--                                                        <div class="form-check">
+                                                                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                                                                   id="flexCheckDefault1">
+                                                                                                                            <label class="form-check-label NotoRe"
+                                                                                                                                   for="flexCheckDefault1">
+                                                                                                                                Compare
+                                                                                                                            </label>
+                                                                                                                        </div>-->
                                                             </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault7">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault7">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
+                                                            <a href="{{route('detailpage', $car->slug)}}"
+                                                               class="text-decoration-none"><h3
+                                                                    class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
+                                                                    {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3>
+                                                            </a>
+                                                            <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>
+                                                            <!--                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
+                                                                                                                </p>-->
+                                                            <hr>
+                                                            <div class="infowrap">
+                                                                <div class="row row-cols-3 g-2 text-white">
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-speedometer"></i>
+                                                                            <p>{{$car->bodytype->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-bezier2"></i>
+                                                                            <p>{{$car->transmission->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-droplet"></i>
+                                                                            <p>{{$car->fueltype->name}}</p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault8">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault8">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <div class="d-flex">
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
+                                        @foreach($cars as $car)
+                                            @if($loop->index >= 6 && $loop->index < 9)
+                                                <div class="col-12 col-md-6 col-lg-4 px-lg-2">
+                                                    <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
+                                                        <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img
+                                                                src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
+                                                                class="card-img-top rounded-lb-top"
+                                                                alt="mercedes"></a>
+                                                        <div
+                                                            class="showbadges w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex flex-column p-2">
                                                         <span
                                                             class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault9">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault9">
-                                                                Compare
-                                                            </label>
+                                                                <span
+                                                                    class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
+                                                            </div>
+                                                            <button
+                                                                class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
+                                                                <i class="bi bi-suit-heart text-danger"></i>
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
+                                                        <div class="card-body d-flex flex-column">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="NotoRe">{{$car->buildyear}}</p>
+                                                                <!--                                                        <div class="form-check">
+                                                                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                                                                   id="flexCheckDefault1">
+                                                                                                                            <label class="form-check-label NotoRe"
+                                                                                                                                   for="flexCheckDefault1">
+                                                                                                                                Compare
+                                                                                                                            </label>
+                                                                                                                        </div>-->
                                                             </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault10">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault10">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
+                                                            <a href="{{route('detailpage', $car->slug)}}"
+                                                               class="text-decoration-none"><h3
+                                                                    class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
+                                                                    {{($car->brand ? $car->brand->name : '') . ' ' . $car->name}}</h3>
+                                                            </a>
+                                                            <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>
+                                                            <!--                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
+                                                                                                                </p>-->
+                                                            <hr>
+                                                            <div class="infowrap">
+                                                                <div class="row row-cols-3 g-2 text-white">
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-speedometer"></i>
+                                                                            <p>{{$car->bodytype->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-bezier2"></i>
+                                                                            <p>{{$car->transmission->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <div class="bg-dark rounded-3 pt-2 pb-1">
+                                                                            <i class="bi bi-droplet"></i>
+                                                                            <p>{{$car->fueltype->name}}</p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 px-lg-2">
-                                            <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
-                                                <a href="detaillpagina.html" class="img-hover"><img src="images/17.jpg"
-                                                                                                    class="card-img-top rounded-lb-top"
-                                                                                                    alt="mercedes"></a>
-                                                <div
-                                                    class="showbadges w-100 d-flex justify-content-between align-items-center">
-                                                    <div class="d-flex flex-column p-2">
-                                                        <span
-                                                            class="badge bg-primary text-white fs-7 NotoRe fw-light rounded-3 w-75 mb-1">New</span>
-                                                        <span
-                                                            class="badge bg-success text-white fs-7 NotoRe fw-light rounded-3">Certified</span>
-                                                    </div>
-                                                    <button
-                                                        class="showheart border-0 text-white circle-background rounded-circle bg-light d-flex justify-content-center align-items-center me-2">
-                                                        <i class="bi bi-suit-heart text-danger"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="card-body d-flex flex-column">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="NotoRe">2015</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="flexCheckDefault11">
-                                                            <label class="form-check-label NotoRe"
-                                                                   for="flexCheckDefault11">
-                                                                Compare
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="detaillpagina.html" class="text-decoration-none"><h3
-                                                            class="fs-5 card-title NotoBo text-white-50 mt-auto hover-text-white-50">
-                                                            Mercedes Benz convertible coupe</h3></a>
-                                                    <p class="card-text NotoRe text-danger">$25,800</p>
-                                                    <p class="card-text NotoRe"><i class="bi bi-geo-alt"></i>New York
-                                                    </p>
-                                                    <hr>
-                                                    <div class="infowrap">
-                                                        <div class="row row-cols-3 g-2 text-white">
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-speedometer"></i>
-                                                                    <p>48K mi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-bezier2"></i>
-                                                                    <p>Automatic</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col text-center">
-                                                                <div class="bg-dark rounded-3 pt-2 pb-1">
-                                                                    <i class="bi bi-droplet"></i>
-                                                                    <p>Gasoline</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -1313,7 +793,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class=" d-none row row-cols-3 g-3">
+                    <div class="d-none row row-cols-3 g-3">
                         <div class="col">
                             <div class="card bg-licht text-white-50 d-flex">
                                 <img src="images/17.jpg" class="card-img-top" alt="mercedes">
@@ -1447,7 +927,7 @@
                 </div>
             </div>
         </section>
-        <section id="News" class="container-fluid">
+        <section id="News" class="container-fluid d-none">
             <div class="row">
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto py-5">
                     <div class="row">
