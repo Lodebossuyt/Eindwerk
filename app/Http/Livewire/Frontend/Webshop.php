@@ -35,6 +35,7 @@ class Webshop extends Component
     public $buildyearMax;
     public $priceMin;
     public $priceMax;
+    public $sort;
 
   /*  public function updated(){
         $this->resetPage();
@@ -123,6 +124,8 @@ class Webshop extends Component
             })
             ->when($this->priceMax, function ($query){
                 $query ->where('price', '<', $this->priceMax);
+            })->when($this->sort, function($query){
+                $query->orderBy('price', $this->sort);
             })
             ->paginate(6);
 

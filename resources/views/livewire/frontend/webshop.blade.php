@@ -222,10 +222,10 @@
                                 <div class="d-flex flex-wrap align-items-center">
                                     <p class="text-white NotoRe pe-3 m-0"><i class="bi bi-arrow-down-up pe-2"></i> Sort
                                         by:</p>
-                                    <select class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
-                                        <option>Newest</option>
-                                        <option>Price: Low - High</option>
-                                        <option>Price: High - Low</option>
+                                    <select wire:model="sort" class="NotoRe bg-licht text-white-50 rounded-3 p-2 border-lb">
+                                        <option value="">Select</option>
+                                        <option value="ASC">Price: Low - High</option>
+                                        <option value="DESC">Price: High - Low</option>
                                     </select>
                                     <!--                                    <div class="border-lb-right py-3 px-2 me-2"></div>
                                                                         <p class="text-white-50 NotoBo pe-3 m-0 fs-5"><i
