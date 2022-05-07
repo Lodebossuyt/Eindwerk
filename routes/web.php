@@ -36,7 +36,6 @@ Route::get('payment-success',[App\Http\Livewire\Frontend\Checkout::class, 'payme
 /**Backend Routes**/
 Route::group(['prefix'=>'backend', 'middleware'=>'admin'], function(){
     Route::get('/users', App\Http\Livewire\IndexUser::class)->name('users.index');
-    Route::get('/users/create', App\Http\Livewire\CreateUser::class)->name('users.create');
     Route::get('/cars', App\Http\Livewire\Cars\Index::class)->name('cars.index');
 });
 

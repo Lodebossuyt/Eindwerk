@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Users;
 
 use App\Models\Photo;
 use App\Models\Role;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class CreateUser extends Component
+class Create extends Component
 {
 
     use WithFileUploads;
@@ -63,14 +63,20 @@ class CreateUser extends Component
             $user->photos()->save($photo);
         }
 
+        $this->emit('refreshUsers');
         $this->dispatchBrowserEvent('notify', 'User created Successfully!');
 
-       /* return redirect()->route('users.index');*/
+        $this->name = '';
+        $this->email = '';
+        $this->password = '';
+        $this->passwordConfirmation = '';
+        $this->rolesSelect = [];
+        $this->avatar = null;
     }
 
     public function render()
     {
         $roles = Role::all();
-        return view('livewire.users.create-user', compact('roles'))->extends('layouts.backend')->section('content');
+        return view('livewire.users.create', compact('roles'));
     }
 }

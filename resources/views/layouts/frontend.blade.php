@@ -44,8 +44,22 @@
                                     <a class="nav-link NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
                                 </li>
                                 @if(Auth::check())
-                                    <li class="nav-item d-lg-none px-2 px-xl-3">
-                                        <a class="nav-link NotoBo"><i class="bi bi-person "></i> {{Auth::user()->name}}</a>
+                                    <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-lg-none">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }}
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
                                     </li>
                                 @else
                                     <li class="nav-item d-lg-none px-2 px-xl-3">
@@ -61,9 +75,23 @@
                             </ul>
                         </div>
                         @if(Auth::check())
-                            <a class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
-                                <i class="bi bi-person"></i> {{Auth::user()->name}}
-                            </a>
+                            <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @else
                             <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
                                 <i class="bi bi-person"></i> Sign in
