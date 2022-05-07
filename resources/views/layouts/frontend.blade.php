@@ -13,7 +13,7 @@
     <title>car|HOME</title>
     @livewireStyle
 </head>
-<body>
+<body class="d-flex flex-column vh-100">
 <h1 class="d-none">Homepagina</h1>
 <header id="navbarheader" class="sticky-top mb-5">
     <div class="container-fluid">
@@ -110,7 +110,7 @@
 
 @yield('content')
 
-<footer class="bg-licht NotoRe">
+<footer class="bg-licht NotoRe mt-auto">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-lg-10 col-xl-8 mx-auto pt-4">

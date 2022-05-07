@@ -176,7 +176,7 @@ class Checkout extends Component
     public function paymentSuccess()
     {
         //echo 'payment has been received';
-        return redirect()->route('home');
+        return redirect()->route('paymentsuccess');
 
     }
 

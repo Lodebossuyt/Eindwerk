@@ -30,8 +30,9 @@ Route::get('/mycart',App\Http\Livewire\Frontend\Mycart::class)->name('mycart');
 Route::get('/checkout', App\Http\Livewire\Frontend\Checkout::class)->name('checkout');
 
 /**Payment Routes**/
-Route::get('mollie-payment',[App\Http\Livewire\Frontend\Checkout::class,'preparePayment'])->name('mollie.payment');
+//Route::get('mollie-payment',[App\Http\Livewire\Frontend\Checkout::class,'preparePayment'])->name('mollie.payment');
 Route::get('payment-success',[App\Http\Livewire\Frontend\Checkout::class, 'paymentSuccess'])->name('payment.success');
+Route::get('/paymentsuccess', App\Http\Livewire\Frontend\Paymentsuccess::class)->name('paymentsuccess');
 
 /**Backend Routes**/
 Route::group(['prefix'=>'backend', 'middleware'=>'admin'], function(){
