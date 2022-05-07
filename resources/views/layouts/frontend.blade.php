@@ -35,7 +35,7 @@
                                     <a class="nav-link NotoBo" href="{{route('webshop')}}">Webshop</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link NotoBo" href="contacts.html">Contact</a>
+                                    <a class="nav-link NotoBo" href="{{route('contact')}}">Contact</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link NotoBo" href="#">Blog</a>

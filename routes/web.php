@@ -28,6 +28,7 @@ Route::get('/webshop', App\Http\Livewire\Frontend\Webshop::class)->name('webshop
 Route::get('/webshop-{slug}',App\Http\Livewire\Frontend\Detailpage::class)->name('detailpage');
 Route::get('/mycart',App\Http\Livewire\Frontend\Mycart::class)->name('mycart');
 Route::get('/checkout', App\Http\Livewire\Frontend\Checkout::class)->name('checkout');
+Route::get('/contact', App\Http\Livewire\Frontend\Contact::class)->name('contact');
 
 /**Payment Routes**/
 //Route::get('mollie-payment',[App\Http\Livewire\Frontend\Checkout::class,'preparePayment'])->name('mollie.payment');
