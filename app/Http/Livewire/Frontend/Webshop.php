@@ -36,7 +36,11 @@ class Webshop extends Component
     public $priceMin;
     public $priceMax;
 
-    public function updatedBrandFilters(){
+  /*  public function updated(){
+        $this->resetPage();
+    }*/
+
+   /* public function updatedBrandFilters(){
         $this->resetPage();
     }
     public function updatedDrivetrainFilters(){
@@ -65,7 +69,7 @@ class Webshop extends Component
     }
     public function updatedPriceMax(){
         $this->resetPage();
-    }
+    }*/
 
     public function render()
     {
