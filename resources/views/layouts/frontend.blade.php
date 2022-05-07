@@ -72,31 +72,35 @@
                                         <i class="bi bi-plus"></i>Sell Car
                                     </a>
                                 </li>-->
-                            </ul>
-                        </div>
-                        @if(Auth::check())
-                            <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-none d-lg-block">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                                @if(Auth::check())
+                                    <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }}
+                                        </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                                {{ __('Logout') }}
+                                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @else
-                            <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
-                                <i class="bi bi-person"></i> Sign in
-                            </a>
-                        @endif
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                            <i class="bi bi-person"></i> Sign in
+                                        </a>
+                                    </li>
+                                @endif
+                            </ul>
+
+                        </div>
+
 
 <!--                        <a class="btn btn-danger ms-3 NotoBo d-none d-lg-block" href="">
                             <i class="bi bi-plus"></i>Sell Car

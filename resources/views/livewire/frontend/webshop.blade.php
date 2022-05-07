@@ -602,4 +602,163 @@
             </div>
         </div>
     </main>
+    <button class="btn btn-danger rounded-0 w-100 d-lg-none fixed-bottom text-white NotoRe" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Filters</button>
+    <div class="offcanvas offcanvas-start bg-duister scroll d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExample" style="visibility: hidden;" aria-hidden="true">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="catalogusFiltersM" class="col-12 px-4">
+                    <div id="catalogusNewusedM" class="bg-duister sticky-top pt-4">
+                        <div id="headingM" class="d-flex justify-content-between align-items-center pb-3">
+                            <h2 class="text-white NotoBo">Filters</h2>
+                            <button type="button" class="btn-close btn-close-white" aria-label="Close" data-bs-dismiss="offcanvas"></button>
+                        </div>
+<!--                        <ul class="nav nav-pills pb-4 d-flex align-items-center">
+                            <li class="nav-item me-3">
+                                <a class="nav-link bg-licht text-white NotoRe" href="#">Search New</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-white active text-danger NotoRe" aria-current="page" href="#">Search Used</a>
+                            </li>
+                        </ul>-->
+                    </div>
+                    <div id="catalogusSelectionM" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Selection</h2>
+                        @foreach($brandFilters as $brand)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$brand}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                        @foreach($bodytypeFilters as $bodytype)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$bodytype}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                        @foreach($drivetrainFilters as $drivetrain)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$drivetrain}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                        @foreach($fueltypeFilters as $fueltype)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$fueltype}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                        @foreach($transmissionFilters as $transmission)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$transmission}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                        @foreach($colorFilters as $color)
+                            <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$color}}<i
+                                    class="bi bi-x-lg ps-2"></i></button>
+                        @endforeach
+                    </div>
+<!--                    <div id="catalogusLocationM" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Location</h2>
+                        <select class="NotoRe bg-licht text-white-50 border-lb rounded-3 p-2 w-100">
+                            <option>Select location</option>
+                            <option>Chicago</option>
+                            <option>Dallas</option>
+                            <option>Los Angeles</option>
+                        </select>
+                    </div>-->
+                    <div id="catalogusBodyType" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Body Type</h2>
+                        <div id="checkboxBodys" class="d-flex flex-column">
+                            @foreach($bodytypes as $body)
+                                <div>
+                                    <input class="form-check-input bg-transparent" wire:model="bodytypeFilters"
+                                           value="{{$body->name}}" type="checkbox">
+                                    <label class="form-check-label text-white NotoRe">{{$body->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div id="catalogusYearM" class="pb-4">
+                        <h2 class="text-white NotoBo fs-5">BuildYear</h2>
+                        <div class="d-flex align-items-center">
+                            <input type="text" wire:model="buildyearMin"
+                                   class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                   placeholder="Min">
+                            <div class="mx-2 px-2 border-bottom-lb"></div>
+                            <input type="text" wire:model="buildyearMax"
+                                   class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                   placeholder="Max">
+                        </div>
+                    </div>
+                    <div id="catalogusBodyType" class="pb-4">
+                        <h2 class="text-white NotoBo fs-5">Brand</h2>
+                        <div id="checkboxBodys" class="d-flex flex-column">
+                            @foreach($brands as $brand)
+                                <div>
+                                    <input class="form-check-input bg-transparent" wire:model="brandFilters"
+                                           value="{{$brand->name}}" type="checkbox">
+                                    <label class="form-check-label text-white NotoRe">{{$brand->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div id="catalogusPriceM" class="pb-4">
+                        <h2 class="text-white NotoBo fs-5">Price</h2>
+                        <div class="d-flex align-items-center">
+                            <input type="text" wire:model="priceMin"
+                                   class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                   placeholder="Min">
+                            <div class="mx-2 px-2 border-bottom-lb"></div>
+                            <input type="text" wire:model="priceMax"
+                                   class="NotoRe bg-licht text-white-50 rounded-3 p-1 w-100 border-lb"
+                                   placeholder="Max">
+                        </div>
+                    </div>
+                    <div id="catalogusDrivetrainM" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Drivetrain</h2>
+                        <div id="checkboxDrivetrainM" class="d-flex flex-column">
+                            @foreach($drivetrains as $drivetrain)
+                                <div>
+                                    <input wire:model="drivetrainFilters"
+                                           class="form-check-input bg-transparent border-lb"
+                                           value="{{$drivetrain->name}}" type="checkbox">
+                                    <label class="text-white NotoRe">{{$drivetrain->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div id="catalogusFueltypeM" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Fuel Type</h2>
+                        <div id="checkboxFueltypeM" class="d-flex flex-column">
+                            @foreach($fueltypes as $fueltype)
+                                <div>
+                                    <input wire:model="fueltypeFilters"
+                                           class="form-check-input bg-transparent border-lb" type="checkbox"
+                                           value="{{$fueltype->name}}">
+                                    <label class="text-white NotoRe">{{$fueltype->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div id="catalogusTransmissionM" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Transmission</h2>
+                        <div id="checkboxTransmissionM" class="d-flex flex-column">
+                            @foreach($transmissions as $transmission)
+                                <div>
+                                    <input wire:model="transmissionFilters"
+                                           class="form-check-input bg-transparent border-lb" type="checkbox"
+                                           value="{{$transmission->name}}">
+                                    <label class="text-white NotoRe">{{$transmission->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div id="catalogusColor" class="py-4">
+                        <h2 class="text-white NotoBo fs-5">Color</h2>
+                        <div id="checkboxColor" class="d-flex flex-column">
+                            @foreach($colors as $color)
+                                <div>
+                                    <input wire:model="colorFilters"
+                                           class="form-check-input bg-transparent border-lb" type="checkbox"
+                                           value="{{$color->name}}">
+                                    <label class="text-white NotoRe">{{$color->name}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
