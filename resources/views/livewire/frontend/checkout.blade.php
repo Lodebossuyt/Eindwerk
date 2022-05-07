@@ -1,146 +1,7 @@
 <div>
     <main>
         <!--MODAL CONTENT-->
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggle"
-             tabindex="-1">
-            <div class="modal-dialog modal-fullscreen-md-down modal-lg p-2 modal-dialog-centered" style="max-width: 950px">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btn-close btn-close-white" aria-label="Close"
-                                        data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 border-modal-rechts p-5">
-                                    <header><h2 class="text-white fs-3 mb-4 mb-sm-5">Hey there! <br> Welcome back.</h2>
-                                    </header>
-                                    <img src="images/signin-dark.svg" class="img-fluid" alt="sign in pic">
-                                    <div class="d-flex flex-wrap mt-4 mt-sm-5">
-                                        <p class="text-white-50 pe-2">Don't have an account?</p>
-                                        <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="text-white"
-                                           href="#">Sign up here</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 p-5">
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-google pe-2"></i>Sign in with Google</a>
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-facebook pe-2"></i>Sign in with Facebook</a>
-                                    <div class="d-flex align-items-center py-3 mb-3">
-                                        <hr class="w-100 hr-light2">
-                                        <p class="NotoRe text-white-50 px-3 m-0">Or</p>
-                                        <hr class="w-100 hr-light2">
-                                    </div>
-                                    <form class="signinform">
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
-                                                address</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail2"
-                                                   placeholder="Enter your email">
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="exampleInputPassword"
-                                                   class="form-label text-white NotoRe">Password</label>
-                                            <input type="password" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword" placeholder="Enter password">
-                                        </div>
-                                        <button type="submit" class="btn btn-danger NotoBo rounded-3 w-100 py-2">Sign in
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggle2"
-             tabindex="-1">
-            <div class="modal-dialog modal-fullscreen-md-down modal-lg p-2 modal-dialog-centered" style="max-width: 950px">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btn-close btn-close-white" aria-label="Close"
-                                        data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 border-modal-rechts p-5">
-                                    <header><h2 class="text-white fs-3 mb-4 mb-sm-5">Join Finder. <br> Get premium benefits:
-                                        </h2></header>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Add and
-                                        promote your listings</p>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Easily
-                                        manage your wishlist</p>
-                                    <p class="text-white NotoRe"><i class="bi bi-check-circle text-danger pe-2"></i>Leave
-                                        reviews</p>
-                                    <img src="images/signup-dark.svg" class="img-fluid" alt="sign in pic">
-                                    <div class="d-flex flex-wrap mt-4 mt-sm-5">
-                                        <p class="text-white-50 pe-2">Already have an account?</p>
-                                        <a class="text-white" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
-                                           href="#">Sign in</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 p-5">
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-google pe-2"></i>Sign in with Google</a>
-                                    <a class="btn btn-outline-primary w-100 NotoBo p-2 mb-3" href="#"><i
-                                            class="bi bi-facebook pe-2"></i>Sign in with Facebook</a>
-                                    <div class="d-flex align-items-center py-3 mb-3">
-                                        <hr class="w-100 hr-light2">
-                                        <p class="NotoRe text-white-50 px-3 m-0">Or</p>
-                                        <hr class="w-100 hr-light2">
-                                    </div>
-                                    <form class="signinform">
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail3" class="form-label text-white NotoRe">Full
-                                                name</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail3"
-                                                   placeholder="Enter your full name">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label text-white NotoRe">Email
-                                                address</label>
-                                            <input type="email" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputEmail1"
-                                                   placeholder="Enter your email">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label text-white NotoRe">Password
-                                                <span class="text-white-50">min.8 char</span></label>
-                                            <input type="password" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword1">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword2"
-                                                   class="form-label text-white NotoRe">Password</label>
-                                            <input type="password" class="form-control bg-licht text-white-50 NotoRe p-2"
-                                                   id="exampleInputPassword2">
-                                        </div>
-                                        <div class="form-check mb-4 NotoRe">
-                                            <input class="form-check-input bg-transparent" type="checkbox" value=""
-                                                   id="flexCheckDefault">
-                                            <label class="form-check-label text-white-50" for="flexCheckDefault">
-                                                By joining, I agree to the <a class="text-white" href="">Terms of use</a>
-                                                and
-                                                <a class="text-white" href="">Privacy policy.</a>
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="btn btn-danger NotoBo rounded-3 w-100 py-2">Sign in
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('includes.modal')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto pt-3">
@@ -178,15 +39,24 @@
                                            type="text" name="last_name" placeholder="lastname">-->
                                     <input wire:model="shippingAddress" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                            type="text" name="address" placeholder="Address">
+                                    <div>@error('shippingAddress') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
 <!--                                    <input class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                            type="text" name="aptsuite" placeholder="Apt, suite, etc. (optional)">-->
                                     <input wire:model="shippingCity" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                            type="text" name="city" placeholder="city">
+                                    <div>@error('shippingCity') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+
                                     <div class="d-flex p-0 mb-2">
-                                        <input wire:model="shippingCountry" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
-                                               type="text" name="country" placeholder="country">
-                                        <input wire:model="shippingZipcode" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
-                                               type="text" name="zip" placeholder="zip">
+                                        <div class="w-100">
+                                            <input wire:model="shippingCountry" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
+                                                   type="text" name="country" placeholder="country">
+                                            <div>@error('shippingCountry') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+                                        </div>
+                                       <div class="w-100">
+                                           <input wire:model="shippingZipcode" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
+                                                  type="text" name="zip" placeholder="zip">
+                                           <div>@error('shippingZipcode') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+                                       </div>
                                     </div>
 <!--                                    <select class="NotoRe text-white-50 px-2 border-lb rounded-3 w-100 py-2">
                                         <option>Year</option>
@@ -232,15 +102,23 @@
                                                                                    type="text" name="last_name" placeholder="lastname">-->
                                         <input wire:model="billingAddress" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                                type="text" name="address" placeholder="Address">
+                                        <div>@error('billingAddress') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
                                         <!--                                    <input class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                                                                    type="text" name="aptsuite" placeholder="Apt, suite, etc. (optional)">-->
                                         <input wire:model="billingCity" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
                                                type="text" name="city" placeholder="city">
+                                        <div>@error('billingCity') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
                                         <div class="d-flex p-0 mb-2">
-                                            <input wire:model="billingCountry" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
-                                                   type="text" name="country" placeholder="country">
-                                            <input wire:model="billingZipcode" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
-                                                   type="text" name="zip" placeholder="zip">
+                                            <div class="w-100">
+                                                <input wire:model="billingCountry" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
+                                                       type="text" name="country" placeholder="country">
+                                                <div>@error('billingCountry') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+                                            </div>
+                                            <div class="w-100">
+                                                <input wire:model="billingZipcode" class="form-control w-100 bg-transparent rounded-3 border-lb text-white-50 NotoRe mb-2"
+                                                       type="text" name="zip" placeholder="zip">
+                                                <div>@error('billingZipcode') <div class="alert alert-danger p-2 my-2">{{$message}}</div> @enderror</div>
+                                            </div>
                                         </div>
                                         <!--                                    <select class="NotoRe text-white-50 px-2 border-lb rounded-3 w-100 py-2">
                                                                                 <option>Year</option>
@@ -278,6 +156,9 @@
                             </div>-->
                             <div id="checkoutbutton" class="bg-licht rounded-lb2 p-3 my-3">
                                 <button wire:click="preparePayment" class="btn btn-danger text-white NotoBo w-100 mb-3">Place Order</button>
+                                @if(Session::has('noItems'))
+                                    <div class="alert alert-danger p-2 my-2">{{session('noItems')}}</div>
+                                @endif
                                 <p class="NotoRe fs-7 text-white-50">By placing your order you agree to our Terms & Conditions, privacy and returns policies. You also consent to some of your data being stored by SHOPY, which may be used to make future shopping experiences better for you.</p>
                             </div>
                         </div>
