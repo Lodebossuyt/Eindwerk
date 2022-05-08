@@ -30,3 +30,19 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+var Turbolinks = require("turbolinks")
+Turbolinks.start()
+
+//navbar
+const header = document.getElementById("navbarheader");
+window.onscroll = function(){
+    var top = window.scrollY;
+    console.log(top);
+    if(top>=100){
+        header.classList.add("backgroundnavbar")
+    }
+    else{
+        header.classList.remove("backgroundnavbar")
+    }
+};

@@ -1,5 +1,5 @@
 //navbar
-const header = document.getElementById("navbarheader");
+/*const header = document.getElementById("navbarheader");
 window.onscroll = function(){
     var top = window.scrollY;
     console.log(top);
@@ -9,4 +9,4 @@ window.onscroll = function(){
     else{
         header.classList.remove("backgroundnavbar")
     }
-};
+};*/
