@@ -29,19 +29,19 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav mb-2 mb-lg-0">
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link active NotoBo" aria-current="page" href="{{route('home')}}">Home</a>
+                                    <a class="nav-link {{ Route::currentRouteNamed('home') ? 'active' : '' }} NotoBo" aria-current="page" href="{{route('home')}}">Home</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link NotoBo" href="{{route('webshop')}}">Webshop</a>
+                                    <a class="nav-link {{ Route::currentRouteNamed('webshop') ? 'active' : '' }} NotoBo" href="{{route('webshop')}}">Webshop</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link NotoBo" href="{{route('contact')}}">Contact</a>
+                                    <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active' : '' }} NotoBo" href="{{route('contact')}}">Contact</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link NotoBo" href="#">Blog</a>
                                 </li>
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
+                                    <a class="nav-link {{ Route::currentRouteNamed('mycart') ? 'active' : '' }} NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
                                 </li>
                                 @if(Auth::check())
                                     <li class="nav-item dropdown px-2 text-white-50 NotoBo text-decoration-none d-lg-none">
