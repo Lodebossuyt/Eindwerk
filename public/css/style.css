@@ -133,7 +133,7 @@ nav img{
 }
 /*background*/
 #bg-top{
-    background-image: url("../images/hero-bg.png");
+    background-image: url("../images2/hero-bg.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
