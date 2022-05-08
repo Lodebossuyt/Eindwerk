@@ -31,8 +31,8 @@ const app = new Vue({
     el: '#app',
 });
 
-var Turbolinks = require("turbolinks")
-Turbolinks.start()
+/*var Turbolinks = require("turbolinks")
+Turbolinks.start()*/
 
 //navbar
 const header = document.getElementById("navbarheader");
