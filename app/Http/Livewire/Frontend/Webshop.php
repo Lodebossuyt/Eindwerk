@@ -37,40 +37,36 @@ class Webshop extends Component
     public $priceMax;
     public $sort;
 
-  /*  public function updated(){
-        $this->resetPage();
-    }*/
-
-   /* public function updatedBrandFilters(){
-        $this->resetPage();
+    public function removeBrand($brand){
+        $key = array_search($brand, $this->brandFilters);
+        unset($this->brandFilters[$key]);
+        $this->brandFilters = array_values($this->brandFilters);
     }
-    public function updatedDrivetrainFilters(){
-        $this->resetPage();
+    public function removeDrivetrain($drivetrain){
+        $key = array_search($drivetrain, $this->drivetrainFilters);
+        unset($this->drivetrainFilters[$key]);
+        $this->drivetrainFilters = array_values($this->drivetrainFilters);
     }
-    public function updatedTransmissionFilters(){
-        $this->resetPage();
+    public function removeTransmission($transmission){
+        $key = array_search($transmission, $this->transmissionFilters);
+        unset($this->transmissionFilters[$key]);
+        $this->transmissionFilters = array_values($this->transmissionFilters);
     }
-    public function updatedFueltypeFilters(){
-        $this->resetPage();
+    public function removeFueltype($fueltype){
+        $key = array_search($fueltype, $this->fueltypeFilters);
+        unset($this->fueltypeFilters[$key]);
+        $this->fueltypeFilters = array_values($this->fueltypeFilters);
     }
-    public function updatedBodytypeFilters(){
-        $this->resetPage();
+    public function removeBodytype($bodytype){
+        $key = array_search($bodytype, $this->bodytypeFilters);
+        unset($this->bodytypeFilters[$key]);
+        $this->bodytypeFilters = array_values($this->bodytypeFilters);
     }
-    public function updatedColorFilters(){
-        $this->resetPage();
+    public function removeColor($color){
+        $key = array_search($color, $this->colorFilters);
+        unset($this->colorFilters[$key]);
+        $this->colorFilters = array_values($this->colorFilters);
     }
-    public function updatedBuildyearMin(){
-        $this->resetPage();
-    }
-    public function updatedBuildyearMax(){
-        $this->resetPage();
-    }
-    public function updatedPriceMin(){
-        $this->resetPage();
-    }
-    public function updatedPriceMax(){
-        $this->resetPage();
-    }*/
 
     public function render()
     {

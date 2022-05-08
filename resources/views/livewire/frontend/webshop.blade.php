@@ -22,27 +22,27 @@
                             <div id="catalogusSelection" class="py-4">
                                 <h2 class="text-white NotoBo fs-5">Selection</h2>
                                 @foreach($brandFilters as $brand)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$brand}}<i
+                                    <button wire:click="removeBrand('{{$brand}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$brand}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                                 @foreach($bodytypeFilters as $bodytype)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$bodytype}}<i
+                                    <button wire:click="removeBodytype('{{$bodytype}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$bodytype}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                                 @foreach($drivetrainFilters as $drivetrain)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$drivetrain}}<i
+                                    <button wire:click="removeDrivetrain('{{$drivetrain}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$drivetrain}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                                 @foreach($fueltypeFilters as $fueltype)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$fueltype}}<i
+                                    <button wire:click="removeFueltype('{{$fueltype}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$fueltype}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                                 @foreach($transmissionFilters as $transmission)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$transmission}}<i
+                                    <button wire:click="removeTransmission('{{$transmission}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$transmission}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                                 @foreach($colorFilters as $color)
-                                    <button class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$color}}<i
+                                    <button wire:click="removeColor('{{$color}}')" class="btn NotoRe text-white bg-licht rounded-pill me-1 my-1">{{$color}}<i
                                             class="bi bi-x-lg ps-2"></i></button>
                                 @endforeach
                             </div>
