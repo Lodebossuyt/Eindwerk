@@ -13,7 +13,7 @@
     <title>car|HOME</title>
     @livewireStyle
 </head>
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column {{ Route::currentRouteNamed('paymentsuccess') ? 'vh-100' : '' }}">
 <h1 class="d-none">Homepagina</h1>
 <header id="navbarheader" class="sticky-top mb-5">
     <div class="container-fluid">
@@ -275,6 +275,10 @@
     </div>
 </footer>
 @livewireScripts
+<!--<script type="module">
+    import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+</script>
+<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
 </body>
