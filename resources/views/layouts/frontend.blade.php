@@ -44,7 +44,7 @@
                                     <a class="nav-link NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
                                 </li>
                                 @if(Auth::check())
-                                    <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-lg-none">
+                                    <li class="nav-item dropdown px-2 text-white-50 NotoBo text-decoration-none d-lg-none">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                         </a>
@@ -62,7 +62,7 @@
                                         </div>
                                     </li>
                                 @else
-                                    <li class="nav-item d-lg-none px-2 px-xl-3">
+                                    <li class="nav-item px-2 d-lg-none px-xl-3">
                                         <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login" class="nav-link NotoBo"><i class="bi bi-person "></i> Sign in</a>
                                     </li>
                                 @endif
@@ -73,7 +73,7 @@
                                     </a>
                                 </li>-->
                                 @if(Auth::check())
-                                    <li class="nav-item dropdown text-white-50 NotoBo text-decoration-none d-none d-lg-block">
+                                    <li class="nav-item dropdown px-2 text-white-50 NotoBo text-decoration-none d-none d-lg-block">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                         </a>
@@ -91,7 +91,7 @@
                                         </div>
                                     </li>
                                 @else
-                                    <li>
+                                    <li class="nav-item d-flex align-items-center">
                                         <a data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="login1" class="text-white-50 NotoBo text-decoration-none d-none d-lg-block">
                                             <i class="bi bi-person"></i> Sign in
                                         </a>
