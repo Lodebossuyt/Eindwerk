@@ -58,6 +58,7 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{route('users.index')}}"><i class="fas fa-users me-2"></i> Users</a>
                             <a class="nav-link" href="{{route('cars.index')}}"><i class="fa-solid fa-cars me-2"></i>Cars</a>
+                            <a class="nav-link" href="{{route('orders.index')}}"><i class="fa-solid fa-bags-shopping me-2"></i>Orders</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

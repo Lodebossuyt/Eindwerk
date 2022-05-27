@@ -32,7 +32,7 @@ class Index extends Component
     public function render()
     {
 
-        $this->cars = Car::paginate(5);
+        $this->cars = Car::with('photos', 'bodytype','transmission','fueltype', 'brand', 'colors', 'drivetrain')->paginate(5);
 
 
         return view('livewire.cars.index', ['cars'=>$this->cars])->extends('layouts.backend')->section('content');

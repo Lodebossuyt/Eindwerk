@@ -25,7 +25,7 @@ class IndexUser extends Component
     }
     public function render()
     {
-        $this->users = User::paginate(10);
+        $this->users = User::with('photos', 'roles')->paginate(10);
         return view('livewire.users.index-user', ['users'=>$this->users])->extends('layouts.backend')->section('content');
     }
 }

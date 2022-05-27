@@ -78,7 +78,7 @@ class Webshop extends Component
         $this->bodytypes = Bodytype::all();
 
         /**Filters maybe extract later**/
-        $this->cars = Car::query()
+        $this->cars = Car::with('photos', 'bodytype','transmission','fueltype', 'brand')
             ->when($this->bodytypeFilters, function ($query){
                 $query ->whereHas('bodytype', function($query){
                     $query->whereIn('name', $this->bodytypeFilters);

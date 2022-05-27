@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
+        $cars = Car::with('photos', 'bodytype','transmission','fueltype', 'brand')->get();
         return view('home', compact('cars'));
     }
 }

@@ -12,10 +12,10 @@ class Orderitem extends Model
     protected $guarded = ['id'];
 
     public function order(){
-        $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class);
     }
     public function car(){
-        $this->belongsTo(Car::class);
+        return $this->belongsTo(Car::class);
     }
 
 }

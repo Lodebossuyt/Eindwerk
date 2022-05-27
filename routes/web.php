@@ -37,9 +37,10 @@ Route::get('/paymentsuccess', App\Http\Livewire\Frontend\Paymentsuccess::class)-
 
 /**Backend Routes**/
 Route::group(['prefix'=>'backend', 'middleware'=>'admin'], function(){
-    Route::get('/', App\Http\Livewire\IndexUser::class)->name('users.index');
+    Route::get('/', App\Http\Livewire\IndexUser::class)->name('backend.index');
     Route::get('/users', App\Http\Livewire\IndexUser::class)->name('users.index');
     Route::get('/cars', App\Http\Livewire\Cars\Index::class)->name('cars.index');
+    Route::get('/orders', App\Http\Livewire\Orders\Index::class)->name('orders.index');
 });
 
 
