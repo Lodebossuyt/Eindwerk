@@ -3,9 +3,9 @@
             @foreach($order->orderitems as $orderitem)
                 <div>
                     <div class="card col">
-                        <img src="http://via.placeholder.com/400x200" class="card-img-top" alt="...">
+                        <img src="{{$orderitem->car->photos->isnotempty() ? asset('images/' . $orderitem->car->photos->first()->file) : "http://via.placeholder.com/800x400"}}" class="card-img-top img-gluid" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Name: {{$orderitem->car->name}}</h5>
+                            <h5 class="card-title">{{$orderitem->car->name}}</h5>
                             <p class="card-text mb-2">Price: {{$orderitem->price}}</p>
                             <p class="card-text mb-2">Amount: {{$orderitem->amount}}</p>
                         </div>

@@ -12,7 +12,7 @@ class Detailpage extends Component
     protected $car;
 
     public function mount($slug){
-        $this->car = Car::where('slug', $slug)->first();
+        $this->car = Car::where('slug', $slug)->with('bodytype','photos')->first();
     }
 
     public function addToCart($id){
