@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <section id="carbodys" class="container-fluid">
+<!--        <section id="carbodys" class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto pt-5">
                     <div class="row">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <section id="top-offers" class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto pt-5">

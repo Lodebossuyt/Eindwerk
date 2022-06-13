@@ -38,9 +38,9 @@
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active' : '' }} NotoBo" href="{{route('contact')}}">Contact</a>
                                 </li>
-                                <li class="nav-item px-2 px-xl-3">
+<!--                                <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link NotoBo" href="#">Blog</a>
-                                </li>
+                                </li>-->
                                 <li class="nav-item px-2 px-xl-3">
                                     <a class="nav-link {{ Route::currentRouteNamed('mycart') ? 'active' : '' }} NotoBo d-flex" href="{{route('mycart')}}">My cart <span class="ms-1">@livewire('frontend.carticon')</span></a>
                                 </li>
