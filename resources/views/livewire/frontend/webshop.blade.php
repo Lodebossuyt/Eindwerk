@@ -238,7 +238,7 @@
                                         <div>
                                             <div class="card card-hover bg-licht rounded-lb text-white-50 d-flex">
                                                 <a href="{{route('detailpage', $car->slug)}}" class="img-hover"><img
-                                                        src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/400x200"}}"
+                                                        src="{{$car->photos->isnotempty() ? asset('images/' . $car->photos->first()->file) : "http://via.placeholder.com/800x400"}}"
                                                         class="card-img-top rounded-lb-top"
                                                         alt="mercedes"></a>
                                                 <div

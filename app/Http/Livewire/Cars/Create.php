@@ -74,10 +74,7 @@ class Create extends Component
         if($this->photos){
             foreach ($this->photos as $photo) {
                 $name = time() . $photo->getClientOriginalName();
-                $img = Image::make($photo);
-                $img->resize(1000,500);
-                $img->save('images/' . $name);
-                //$img->storeAs('images', $name);
+                $this->resizeMedium($photo, $name);
                 $photodatabase = Photo::create(['file'=>$name]);
                 $car->photos()->save($photodatabase);
             }
