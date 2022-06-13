@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Cars;
 
+use App\Http\Traits\PhotoTrait;
 use App\Models\Bodytype;
 use App\Models\Brand;
 use App\Models\Car;
@@ -11,11 +12,13 @@ use App\Models\Fueltype;
 use App\Models\Photo;
 use App\Models\Transmission;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Create extends Component
 {
+    use PhotoTrait;
     use WithFileUploads;
 
     protected $brands;
@@ -71,7 +74,10 @@ class Create extends Component
         if($this->photos){
             foreach ($this->photos as $photo) {
                 $name = time() . $photo->getClientOriginalName();
-                $photo->storeAs('images', $name);
+                $img = Image::make($photo);
+                $img->resize(1000,500);
+                $img->save('images/' . $name);
+                //$img->storeAs('images', $name);
                 $photodatabase = Photo::create(['file'=>$name]);
                 $car->photos()->save($photodatabase);
             }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Users;
 
+use App\Http\Traits\PhotoTrait;
 use App\Models\Photo;
 use App\Models\Role;
 use App\Models\User;
@@ -13,6 +14,7 @@ use Livewire\WithFileUploads;
 class EditUser extends Component
 {
     use WithFileUploads;
+    use PhotoTrait;
 
     public $user_id;
     public $name = '';
@@ -65,15 +67,14 @@ class EditUser extends Component
                 /**delete old**/
                 Storage::disk('images')->delete($user->photos()->first()->file);
                 $name = time() . $file->getClientOriginalName();
-                $file->storeAs('images', $name);
+                $this->resizeThumbnail($file, $name);
                 $photo = Photo::create(['file'=>$name]);
                 Photo::where('file', '=', $user->photos()->first()->file)->delete();
-                //$user->photos()->detach();
                 $user->photos()->sync($photo);
             }else{
                 /**make or overwright with new**/
                 $name = time() . $file->getClientOriginalName();
-                $file->storeAs('images', $name);
+                $this->resizeThumbnail($file, $name);
                 $photo = Photo::create(['file'=>$name]);
                 $user->photos()->save($photo);
             }

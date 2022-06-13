@@ -46,14 +46,12 @@
                     <th>{{$user->id}}</th>
                     <th>
                         @if($user->photos->isnotempty())
-                            <img class="img-thumbnail" width="100px"
+                            <img class="img-thumbnail img-fluid" width="50px"
                                  src="{{$user->photos->first() ? asset('/images/' . $user->photos->first()->file) : "http://via.placeholder.com/100"}}"
                                  alt="{{$user->name}}">
                         @else
-                            <img src="http://via.placeholder.com/100x50" alt="placeholderfoto">
+                            <img class="img-thumbnail img-fluid" width="50px" src="http://via.placeholder.com/100x100" alt="placeholderfoto">
                         @endif
-
-
                     </th>
                     <th>{{$user->name}}</th>
                     <th>{{$user->email}}</th>

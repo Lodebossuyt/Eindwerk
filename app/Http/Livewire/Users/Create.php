@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Users;
 
+use App\Http\Traits\PhotoTrait;
 use App\Models\Photo;
 use App\Models\Role;
 use App\Models\User;
@@ -13,6 +14,7 @@ class Create extends Component
 {
 
     use WithFileUploads;
+    use PhotoTrait;
 
     public $name = '';
     public $email = '';
@@ -57,9 +59,17 @@ class Create extends Component
         $user->roles()->sync($data['rolesSelect'], false);
 
         if($file = $this->avatar){
+
+            /*give name*/
             $name = time() . $file->getClientOriginalName();
-            $file->storeAs('images', $name);
+
+            /*trait function*/
+            $this->resizeThumbnail($file, $name);
+
+            /*create photo DB*/
             $photo = Photo::create(['file'=>$name]);
+
+            /*Link photo to users*/
             $user->photos()->save($photo);
         }
 
