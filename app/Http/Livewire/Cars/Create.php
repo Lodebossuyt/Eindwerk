@@ -81,7 +81,7 @@ class Create extends Component
         }
 
 
-
+        $this->emit('refreshCars');
         $this->dispatchBrowserEvent('notify', 'Car created Successfully!');
 
         $this->name = '';
