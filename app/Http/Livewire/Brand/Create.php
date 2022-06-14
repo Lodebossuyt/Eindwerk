@@ -26,6 +26,7 @@ class Create extends Component
         $brand->save();
 
         $this->emit('refreshBrands');
+        $this->emit('refreshCars');
 
         $this->name = '';
 

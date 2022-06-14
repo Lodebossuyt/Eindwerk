@@ -16,7 +16,7 @@ class Detailpage extends Component
     }
 
     public function addToCart($id){
-        $product = Car::findOrFail($id);
+        $product = Car::findOrFail($id)->load('bodytype');
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $id);

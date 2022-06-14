@@ -31,6 +31,7 @@ class Edit extends Component
         $brand->update();
 
         $this->emit('refreshBrands');
+        //$this->emit('refreshCars');
 
         $this->dispatchBrowserEvent('notify', $brand->name . ' updated Successfully!');
     }

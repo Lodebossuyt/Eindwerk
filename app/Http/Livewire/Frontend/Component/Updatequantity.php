@@ -16,12 +16,14 @@ class Updatequantity extends Component
         $this->quantity = $car['quantity'];
     }
     public function updatedQuantity(){
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->updateQuantity($this->car['product_id'], $this->quantity);
-        Session::put('cart', $cart);
-        $this->emit('updateTotal');
-        $this->emit('refreshCartIcon');
+        if($this->quantity > 0){
+            $oldCart = Session::has('cart') ? Session::get('cart') : null;
+            $cart = new Cart($oldCart);
+            $cart->updateQuantity($this->car['product_id'], $this->quantity);
+            Session::put('cart', $cart);
+            $this->emit('updateTotal');
+            $this->emit('refreshCartIcon');
+        }
     }
 
     public function render()

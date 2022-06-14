@@ -333,8 +333,8 @@
                                                                 class="fs-5 card-title NotoBo text-white-50 hover-text-white-50">
                                                                 Ford Truck Lifted</h3></a>
                                                         <p class="card-text NotoRe text-danger">&euro; {{$car->price}}</p>
-                                                        <hr class="mt-auto">
-                                                        <div class="infowrap">
+                                                        <hr>
+                                                        <div class="infowrap mt-auto">
                                                             <div class="row row-cols-3 g-2 text-white">
                                                                 <div class="col text-center">
                                                                     <div class="bg-dark rounded-3 pt-2 pb-1">

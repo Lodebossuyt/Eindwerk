@@ -32,6 +32,8 @@ class Edit extends Component
 
         $this->emit('refreshColors');
 
+        //$this->emit('refreshCars');
+
         $this->dispatchBrowserEvent('notify', $color->name . ' updated Successfully!');
     }
     public function render()

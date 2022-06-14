@@ -18,10 +18,6 @@ class Index extends Component
 
     public function delete_color($id){
         $color = Color::findOrfail($id);
-       /* foreach($color->cars as $car){
-            $car->brand_id = NULL;
-            $car->update();
-        }*/
         $this->dispatchBrowserEvent('notify', $color->name . ' Deleted Successfully!');
         $color->delete();
         $this->colors = Color::paginate(5, ['*'], 'colorpagination');
