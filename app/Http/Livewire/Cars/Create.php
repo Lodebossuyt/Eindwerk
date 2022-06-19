@@ -43,7 +43,7 @@ class Create extends Component
 
     public function create_car(){
         $data = $this->validate([
-            'name' => 'required',
+            'name' => 'required|unique:cars|max:255',
             'brand_id'=>'required',
             'drivetrain_id'=>'required',
             'transmission_id'=>'required',

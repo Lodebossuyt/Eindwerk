@@ -39,7 +39,7 @@
             <img class="img-thumbnail mb-3" src="{{ $avatar->temporaryUrl() }}">
         @endif
         <div>
-            <input class="btn btn-success mb-3" type="submit" value="Create User" data-bs-dismiss="modal">
+            <input class="btn btn-success mb-3" type="submit" value="Create User">
         </div>
     </form>
 </div>

@@ -4,7 +4,7 @@
         <button class="btn btn-primary ms-2" data-bs-toggle="modal"
                 data-bs-target="#exampleModal">Create Car
         </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div wire:ignore class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -23,7 +23,7 @@
             </div>
         </div>
         <button class="btn btn-primary ms-2" data-bs-toggle="modal"
-                data-bs-target="#exampleModalBrand">Brands
+                data-bs-target="#exampleModalBrand">Car Brands
         </button>
         <div class="modal fade" id="exampleModalBrand" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <button class="btn btn-primary ms-2" data-bs-toggle="modal"
-                data-bs-target="#exampleModalColors">Colors
+                data-bs-target="#exampleModalColors">Car Colors
         </button>
         <div class="modal fade" id="exampleModalColors" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">

@@ -76,6 +76,7 @@ class Create extends Component
         $this->emit('refreshUsers');
         $this->dispatchBrowserEvent('notify', 'User created Successfully!');
 
+
         $this->name = '';
         $this->email = '';
         $this->password = '';

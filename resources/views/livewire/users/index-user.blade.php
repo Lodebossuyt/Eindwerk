@@ -6,7 +6,7 @@
         </button>
     </div>
 
-    <div class="modal fade" id="exampleModalUser" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div wire:ignore.self class="modal fade" id="exampleModalUser" tabindex="-1" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">

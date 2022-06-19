@@ -34,6 +34,7 @@ Route::get('/contact', App\Http\Livewire\Frontend\Contact::class)->name('contact
 //Route::get('mollie-payment',[App\Http\Livewire\Frontend\Checkout::class,'preparePayment'])->name('mollie.payment');
 Route::get('payment-success',[App\Http\Livewire\Frontend\Checkout::class, 'paymentSuccess'])->name('payment.success');
 Route::get('/paymentsuccess', App\Http\Livewire\Frontend\Paymentsuccess::class)->name('paymentsuccess');
+Route::name('webhooks.mollie')->post('webhooks/mollie', [App\Http\Livewire\Frontend\Checkout::class, 'handle']);
 
 /**Backend Routes**/
 Route::group(['prefix'=>'backend', 'middleware'=>'admin'], function(){
