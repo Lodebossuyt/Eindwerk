@@ -226,7 +226,7 @@
                     <div class="row">
                         <div class="d-flex justify-content-between align-items-center">
                             <header><h2 class="NotoBo text-white pb-4">Top offers</h2></header>
-                            <p class="NotoRe text-white">View all offers -&gt;</p>
+                            <a href="{{route('webshop')}}" class="NotoRe text-white">View all offers -&gt;</a>
                         </div>
                     </div>
                     <div class="row">
@@ -406,7 +406,7 @@
                     <div class="row pb-5">
                         <div class="d-flex justify-content-between align-items-center">
                             <header><h2 class="NotoBo text-white">What sets Finder Apart</h2></header>
-                            <p class="NotoRe text-white">How to sell cars on Finder --></p>
+                            <p class="NotoRe text-white d-none">How to sell cars on Finder --></p>
                         </div>
                     </div>
                     <div class="row">
@@ -489,7 +489,7 @@
                                         <a class="nav-link bg-licht text-white NotoRe" href="#">Used</a>
                                     </li>
                                 </ul>
-                                <p class="NotoRe text-white ps-3 m-0 ms-auto">View all --></p>
+                                <a href="{{route('webshop')}}" class="NotoRe text-white ps-3 m-0 ms-auto">View all --></a>
                             </div>
                         </div>
                     </div>

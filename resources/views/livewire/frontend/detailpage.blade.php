@@ -340,7 +340,7 @@
                             <div class="col-md-5 mb-3">
                                 <div>
                                     <div class="d-flex pb-3">
-<!--                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">Used</span>-->
+                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">Used</span>
                                         <span class="badge bg-success NotoRe fw-light fs-6 text-white">Certified</span>
                                     </div>
                                     <p class="NotoBo fs-2 text-white">&#36;{{$car->price}}</p>
@@ -373,7 +373,7 @@
                                                 <button class="btn btn-danger NotoBo p-2 mb-2 w-75">Send message</button>
                                             </div>
                                         </div>-->
-                                        <div class="border-lb rounded-lb p-3">
+                                        <div class="border-lb rounded-lb p-3 d-none">
                                             <p class="text-white NotoBo fs-5">Email me discount and promotion:</p>
                                             <div class="formfooter bg-licht mb-3">
                                                 <form class="row g-0 p-2">
