@@ -340,7 +340,7 @@
                             <div class="col-md-5 mb-3">
                                 <div>
                                     <div class="d-flex pb-3">
-                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">Used</span>
+                                        <span class="badge bg-primary NotoRe fw-light fs-6 text-white me-2">New</span>
                                         <span class="badge bg-success NotoRe fw-light fs-6 text-white">Certified</span>
                                     </div>
                                     <p class="NotoBo fs-2 text-white">&#36;{{$car->price}}</p>
