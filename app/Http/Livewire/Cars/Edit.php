@@ -14,6 +14,7 @@ use App\Models\Transmission;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -70,7 +71,10 @@ class Edit extends Component
         $car = Car::findOrfail($this->car_id);
 
         $data = $this->validate([
-            'name' => 'required',
+            'name' => [
+              'required',
+                Rule::unique('cars')->ignore($this->car_id, 'id'),
+            ],
             'brand_id' => 'required',
             'drivetrain_id' => 'required',
             'transmission_id' => 'required',

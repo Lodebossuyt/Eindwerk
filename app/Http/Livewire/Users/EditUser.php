@@ -8,6 +8,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -26,6 +27,7 @@ class EditUser extends Component
     public $avatar;
 
     protected $rules = [
+        'name'=> 'required|unique:users',
         'rolesSelect' => 'required',
     ];
 
@@ -47,7 +49,10 @@ class EditUser extends Component
     {
 
         $data = $this->validate([
-            'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('users')->ignore($this->user_id, 'id'),
+            ],
             'email' => 'required|email',
             'rolesSelect' => 'required',
         ]);

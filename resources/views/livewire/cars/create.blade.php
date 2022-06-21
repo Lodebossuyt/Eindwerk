@@ -8,6 +8,7 @@
         <div class="mb-3">
             <label class="form-label" for="roles">Brand:</label>
             <select wire:model="brand_id" class="form-control" id="roles">
+                <option value="">Select brand</option>
                 @foreach($brands as $brand)
                     <option wire:key="{{$loop->index}}"  value="{{$brand->id}}">{{$brand->name}}</option>
                 @endforeach
@@ -17,6 +18,7 @@
         <div class="mb-3">
             <label class="form-label" for="roles">Drivetrain:</label>
             <select wire:model="drivetrain_id" class="form-control" id="roles">
+                <option value="">Select drivetrain</option>
                 @foreach($drivetrains as $drivetrain)
                     <option wire:key="{{$loop->index}}"  value="{{$drivetrain->id}}">{{$drivetrain->name}}</option>
                 @endforeach
@@ -26,6 +28,7 @@
         <div class="mb-3">
             <label class="form-label" for="roles">Drivetrain:</label>
             <select wire:model="transmission_id" class="form-control" id="roles">
+                <option value="">Select transmission</option>
                 @foreach($transmissions as $transmission)
                     <option wire:key="{{$loop->index}}"  value="{{$transmission->id}}">{{$transmission->name}}</option>
                 @endforeach
@@ -35,6 +38,7 @@
         <div class="mb-3">
             <label class="form-label" for="roles">Fueltypes:</label>
             <select wire:model="fueltype_id" class="form-control" id="roles">
+                <option value="">Select fueltype</option>
                 @foreach($fueltypes as $fueltype)
                     <option wire:key="{{$loop->index}}"  value="{{$fueltype->id}}">{{$fueltype->name}}</option>
                 @endforeach
@@ -44,6 +48,7 @@
         <div class="mb-3">
             <label class="form-label" for="roles">Bodytypes:</label>
             <select wire:model="bodytype_id" class="form-control" id="roles">
+                <option value="">Select bodytype</option>
                 @foreach($bodytypes as $bodytype)
                     <option wire:key="{{$loop->index}}"  value="{{$bodytype->id}}">{{$bodytype->name}}</option>
                 @endforeach
@@ -85,7 +90,7 @@
             @endforeach
         @endif
         <div>
-            <input class="btn btn-success mb-3" type="submit" value="Create Car" data-bs-dismiss="modal">
+            <input class="btn btn-success mb-3" type="submit" value="Create Car">
         </div>
     </form>
 </div>
