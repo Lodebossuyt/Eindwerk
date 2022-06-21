@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="d-flex justify-content-between">
                         <img src="{{asset('images2/logo-light.svg')}}" height="34" width="116" alt="logo">
-                        <div class="d-flex flex-column flex-md-row">
+<!--                        <div class="d-flex flex-column flex-md-row">
                             <div class="col pe-3 d-flex align-items-center">
                                 <i class="bi bi-globe pe-2 text-white-50"></i>
                                 <select class="NotoRe text-white-50 px-2 w-100 border-0">
@@ -141,7 +141,7 @@
                                     <option>4</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

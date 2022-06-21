@@ -50,8 +50,8 @@
                                             <div class="row row-cols-5 g-3">
                                                 @if($car->photos->isnotempty())
                                                     @foreach($car->photos as $photo)
-                                                        <div>
-                                                            <img src="{{asset('images/' . $photo->file)}}" class=" @if($loop->index == 0) active  @endif rounded-lb img-fluid" alt="foto auto" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$photo->id - 1}}" aria-current="true" aria-label="Slide {{$photo->id}}">
+                                                        <div role="button">
+                                                            <img src="{{asset('images/' . $photo->file)}}" class=" @if($loop->index == 0) active  @endif rounded-lb img-fluid" alt="foto auto" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->index}}" aria-current="true" aria-label="Slide {{$loop->index}}">
                                                         </div>
                                                     @endforeach
                                                 @else

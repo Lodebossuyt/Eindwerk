@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div id="formulier" class="container-fluid pt-4">
+            <div id="formulier" class="container-fluid pt-4 d-none">
                 <div class="row mx-1">
                     <div id="formwrapper" class="col-12 col-lg-10 col-xl-8 mx-auto py-2">
                         <form class="row g-0">
