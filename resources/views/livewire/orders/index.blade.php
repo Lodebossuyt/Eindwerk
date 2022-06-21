@@ -7,6 +7,7 @@
         <tr>
             <th>id</th>
             <th>User</th>
+            <th>Transactioncode</th>
             <th>shippingaddress</th>
             <th>billingaddress</th>
             <th>created_at</th>
@@ -21,6 +22,7 @@
                 <tr wire:key="{{$loop->index}}">
                     <th>{{$order->id}}</th>
                     <th>{{$order->user->name}}</th>
+                    <th>{{$order->transactioncode}}</th>
                     <th>{{$order->shippingadress}}</th>
                     <th>{{$order->billingadress}}</th>
                     <th>{{$order->created_at}}</th>

@@ -62,8 +62,6 @@
                                                              aria-current="true" aria-label="Slide 1">
                                                     </div>
                                                 @endif
-
-
 <!--                                                <div>
                                                     <div class="bg-licht d-flex flex-column align-items-center justify-content-center h-100 rounded-lb">
                                                         <i class="bi bi-play-btn text-white"></i>
