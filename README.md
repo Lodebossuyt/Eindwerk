@@ -17,6 +17,11 @@
 ## Login Credentials
 Here you can find the login for the administrator role:
 
-E-mail: Lodebossuyt@hotmail.com
+- E-mail: Lodebossuyt@hotmail.com
 
-Password: 12345678
+- Password: 12345678
+
+## Report
+
+- The directory Report holds my typed assignment and an extra directory for attachments
+
