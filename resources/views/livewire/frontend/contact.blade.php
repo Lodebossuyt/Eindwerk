@@ -8,7 +8,7 @@
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a class="text-decoration-none text-white-50 NotoRe"
-                                                           href="index.html">Home</a>
+                                                           href="{{route('home')}}">Home</a>
                             </li>
                             <li class="breadcrumb-item active text-white text-decoration-none NotoRe"
                                 aria-current="page">

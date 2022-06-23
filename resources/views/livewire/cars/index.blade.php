@@ -115,12 +115,15 @@
                     <th>{{$car->fueltype->name}}</th>
                     <th>{{$car->bodytype->name}}</th>
                     <th>{{$car->buildyear}}</th>
-                    <th>{{$car->body}}</th>
+                    <th><div style="overflow: auto; height: 100px">{{$car->body}}</div></th>
                     <th>&euro; {{$car->price}}</th>
                     <th>
-                        @foreach($car->colors as $color)
-                            <span class="badge bg-success">{{$color->name}}</span>
-                        @endforeach
+                        <div style="overflow: auto; height: 100px">
+                            @foreach($car->colors as $color)
+                                <span class="badge bg-success">{{$color->name}}</span>
+                            @endforeach
+                        </div>
+
                     </th>
                     <th>{{$car->created_at}}</th>
                     <th>{{$car->updated_at}}</th>
