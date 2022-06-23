@@ -24,5 +24,5 @@ Here you can find the login for the administrator role:
 ## Report
 
 - The directory Report holds my typed assignment and an extra directory for attachments
-- Link to my project planner: https://trello.com/b/zDWOWai4/eindwerk-planning
+- Link to my project planner: https://trello.com/invite/b/zDWOWai4/64debd1b0e1d07b46b8630f76fbc8a74/eindwerk-planning
 
