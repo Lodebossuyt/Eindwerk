@@ -22,7 +22,7 @@
             <div class="col-12 col-lg-10 col-xl-8 mx-auto px-0">
                 <nav class="navbar navbar-expand-lg navbar-dark py-3">
                     <div class="container-fluid px-0">
-                        <a class="navbar-brand NotoBo" href="#">
+                        <a class="navbar-brand NotoBo" href="{{route('home')}}">
                             <img src="{{'images2/logo-light.svg'}}" alt="logo" width="116" class="d-inline-block align-text-top"></a>
                         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
                                         </a>
 
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                            <a class="dropdown-item text-white dropdownbg" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -80,7 +80,7 @@
                                         </a>
 
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                            <a class="dropdown-item text-white dropdownbg" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
