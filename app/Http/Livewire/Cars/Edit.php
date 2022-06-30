@@ -111,11 +111,11 @@ class Edit extends Component
                 }
                 $car->photos()->detach();
                 /**make new photos**/
-                foreach ($this->photos as $newphoto) {
-                    $name = time() . $newphoto->getClientOriginalName();
-                    $newphoto->storeAs('images', $name);
-                    $photo = Photo::create(['file' => $name]);
-                    $car->photos()->save($photo);
+                foreach ($this->photos as $photo) {
+                    $name = time() . $photo->getClientOriginalName();
+                    $this->resizeMedium($photo, $name);
+                    $photodatabase = Photo::create(['file' => $name]);
+                    $car->photos()->save($photodatabase);
                 }
 
             } else {
