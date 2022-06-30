@@ -21,7 +21,7 @@
             @foreach($orders as $order)
                 <tr wire:key="{{$loop->index}}">
                     <th>{{$order->id}}</th>
-                    <th>{{$order->user->name}}</th>
+                    <th>{{$order->user ? $order->user->name : 'Gebruiker verwijdert'}}</th>
                     <th>{{$order->transactioncode}}</th>
                     <th>{{$order->shippingadress}}</th>
                     <th>{{$order->billingadress}}</th>
