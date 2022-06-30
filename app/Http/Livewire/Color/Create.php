@@ -26,7 +26,6 @@ class Create extends Component
         $color->save();
 
         $this->emit('refreshColors');
-        $this->emit('refreshCars');
 
         $this->name = '';
 
